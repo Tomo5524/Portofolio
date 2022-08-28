@@ -1,49 +1,50 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import { Grid } from "../Foundations/foundations";
+import Logo from "../Logo/logo";
+import { HeaderData } from "./data";
+// import LightSaver from "./blue-light-saber";
+import { useTheme } from "next-themes";
+import {
+  HeaderContainer,
+  HeaderList,
+  HeaderMenuContainer,
+  LogoContainer,
+  ThemeButton,
+} from "./styles";
+import { LightSaver } from "./light-saber";
 
-// import Logo from './logo'
-// import {
-//   Container,
-//   Box,
-//   Link,
-//   Stack,
-//   Heading,
-//   Flex,
-//   Menu,
-//   MenuItem,
-//   MenuList,
-//   MenuButton,
-//   IconButton,
-//   useColorModeValue
-// } from '@chakra-ui/react'
-// import { HamburgerIcon } from '@chakra-ui/icons'
-// import ThemeToggleButton from './theme-toggle-button'
-// import { IoLogoGithub } from 'react-icons/io5'
-// import { GridContainer, GridWrapper, GridItem } from './styles';
+interface HeaderProps {
+  path: string;
+}
 
-// const LinkItem = ({ href, path, target, children, ...props }) => {
-//   const active = path === href
-//   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
-//   return (
-//     <NextLink href={href} passHref scroll={false}>
-//       <Link
-//         p={2}
-//         bg={active ? 'grassTeal' : undefined}
-//         color={active ? '#202023' : inactiveColor}
-//         target={target}
-//         {...props}
-//       >
-//         {children}
-//       </Link>
-//     </NextLink>
-//   )
-// }
-export default function Header() {
+export default function Header({ path }: HeaderProps) {
+  const { theme, setTheme } = useTheme();
+  console.log("🚀 ~ file: header.tsx ~ line 44 ~ Header ~ path", path);
   // const { path } = props
 
   return (
-    <Grid>
-      <li>Hiya</li>
-    </Grid>
+    <HeaderContainer>
+      <Grid>
+        <LogoContainer>
+          <Logo />
+        </LogoContainer>
+        <HeaderMenuContainer>
+          {HeaderData.map((item, idx) => {
+            return (
+              <HeaderList key={idx}>
+                <Link href={item.href} passHref>
+                  {item.text}
+                </Link>
+              </HeaderList>
+            );
+          })}
+        </HeaderMenuContainer>
+        <ThemeButton
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          {LightSaver()}
+        </ThemeButton>
+      </Grid>
+    </HeaderContainer>
   );
 }

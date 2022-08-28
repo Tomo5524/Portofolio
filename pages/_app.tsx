@@ -1,16 +1,20 @@
-import "../styles/globals.css";
+// import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout/layout";
-import { ThemeProvider } from "styled-components";
-import theme from "../theme";
+import { GlobalStyle } from "../theme/GlobalStyle";
+import { ThemeProvider } from "next-themes";
 
-function MyApp({ Component, pageProps }: AppProps) {
+// pass in router to pass router down to child component
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <GlobalStyle />
+      <ThemeProvider disableTransitionOnChange={false}>
+        <Layout router={router}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
   );
 }
 
