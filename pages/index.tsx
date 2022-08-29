@@ -1,9 +1,22 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
+
+  // if (!mounted) {
+  //   return null;
+  // }
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +25,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <h1>Hiya</h1>
       </main>
 

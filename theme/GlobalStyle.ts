@@ -1,19 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
-/* -webkit-font-smoothing: auto;
-  -webkit-transition: background-color 1000ms linear;
-  -ms-transition: background-color 1000ms linear;
-  transition: background-color 1000ms linear; */
 export const GlobalStyle = createGlobalStyle`
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-   transition: background 0.2s ease-in, color 0.2s ease-in;
 }
-
 a {
   text-decoration: none;
 }
@@ -21,14 +16,22 @@ a {
 * {
   box-sizing: border-box;
 }
-:root {
-  /* Your default theme */
-  --background: rgb(174, 0, 0);
-  --foreground: black;
-}
-
-[data-theme="dark"] {
-  --background: #d48686;
-  --foreground: white;
-}
 `;
+
+// :root {
+//   /* Your default theme */
+//   --background: #f0ecdb;
+//   --foreground: #363537;
+// }
+
+// [data-theme="dark"] {
+//   --background: #2c302c;
+//   --foreground: #fffffb;
+// }
+
+// body {
+//   background-color: var(--background);
+//   color: var(--foreground);
+//   /* transition: background 0.2s ease-in, color 0.2s ease-in; */
+//   transition: background 0.5s linear, color 0.5s linear;
+// }

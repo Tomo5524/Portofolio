@@ -8,13 +8,10 @@ declare module "styled-components" {
     //   main: string;
     //   secondary: string;
     // };
-    background: string;
-    text: string;
-    body: string;
-    breakpoints: {
-      lg: string;
-      sm: string;
-    };
+    // background: string;
+    // text: string;
+    // body: string;
+    // theme:string
   }
 }
 

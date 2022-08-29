@@ -13,10 +13,10 @@ export default function Layout({
 }) {
   return (
     <>
+      <Header path={router.asPath} />
       <Container>
         {/* asPath: String - The path as shown in the browser including the search params and respecting the trailingSlash configuration. basePath and locale are not included. */}
-        <Header path={router.asPath} />
-        <main>{children}</main>
+        {children}
       </Container>
       {/* <Footer /> */}
     </>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LogoBox } from "./styles";
+import { LogoSVG } from "./logoSVG";
 
 const Logo = () => {
   // const footPrintImg = "";
@@ -12,7 +13,8 @@ const Logo = () => {
     <Link href="/" scroll={false}>
       <a>
         <LogoBox>
-          <Image src={logo} width={20} height={20} alt="logo" />
+          {/* <Image src={logo} width={80} height={80} alt="logo" /> */}
+          {LogoSVG()}
         </LogoBox>
       </a>
     </Link>
