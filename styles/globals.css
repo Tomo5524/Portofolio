@@ -1,13 +1,3 @@
-:root {
-  /* Your default theme */
-  --background: rgb(174, 0, 0);
-  --foreground: black;
-}
-
-[data-theme="dark"] {
-  --background: #d48686;
-  --foreground: white;
-}
 /* html,
 body {
   padding: 0;
