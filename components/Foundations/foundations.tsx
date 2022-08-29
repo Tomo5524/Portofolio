@@ -1,13 +1,12 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { media } from "../../theme/breakpoints";
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: 1fr;
   grid-column-gap: 24px;
-  ${({ theme }) =>
-    css`
-      @media ${theme.breakpoints.lg} {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-    `}
+  ${media.lg} {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
 `;

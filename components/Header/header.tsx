@@ -1,49 +1,66 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import { Grid } from "../Foundations/foundations";
+import Logo from "../Logo/logo";
+import { HeaderData } from "./data";
+// import LightSaver from "./blue-light-saber";
+import { useTheme } from "next-themes";
+import {
+  HeaderContainer,
+  HeaderInnerContainer,
+  HeaderItem,
+  HeaderList,
+  HeaderMenuContainer,
+  LogoContainer,
+  ThemeButton,
+} from "./styles";
+import { LightSaver } from "./light-saber";
 
-// import Logo from './logo'
-// import {
-//   Container,
-//   Box,
-//   Link,
-//   Stack,
-//   Heading,
-//   Flex,
-//   Menu,
-//   MenuItem,
-//   MenuList,
-//   MenuButton,
-//   IconButton,
-//   useColorModeValue
-// } from '@chakra-ui/react'
-// import { HamburgerIcon } from '@chakra-ui/icons'
-// import ThemeToggleButton from './theme-toggle-button'
-// import { IoLogoGithub } from 'react-icons/io5'
-// import { GridContainer, GridWrapper, GridItem } from './styles';
+interface HeaderProps {
+  path: string;
+}
 
-// const LinkItem = ({ href, path, target, children, ...props }) => {
-//   const active = path === href
-//   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
-//   return (
-//     <NextLink href={href} passHref scroll={false}>
-//       <Link
-//         p={2}
-//         bg={active ? 'grassTeal' : undefined}
-//         color={active ? '#202023' : inactiveColor}
-//         target={target}
-//         {...props}
-//       >
-//         {children}
-//       </Link>
-//     </NextLink>
-//   )
-// }
-export default function Header() {
-  // const { path } = props
-
+export default function Header({ path }: HeaderProps) {
+  const { theme, setTheme, systemTheme } = useTheme();
   return (
-    <Grid>
-      <li>Hiya</li>
-    </Grid>
+    <HeaderContainer theme={theme === "light"}>
+      <HeaderInnerContainer>
+        <Grid>
+          <LogoContainer>
+            <Logo />
+          </LogoContainer>
+
+          <HeaderMenuContainer>
+            {HeaderData.map((item, idx) => {
+              return (
+                <HeaderList key={idx}>
+                  <Link href={item.href} passHref>
+                    <HeaderItem theme={theme}>{item.text}</HeaderItem>
+                  </Link>
+                </HeaderList>
+              );
+            })}
+          </HeaderMenuContainer>
+          <ThemeButton
+            theme={theme === "light"}
+            onClick={() => {
+              // if a user has system theme, select the opposite color of system theme. also first time to visit the website, no theme is stored in localstorage
+              if (theme === "system") {
+                if (systemTheme === "light") {
+                  setTheme("dark");
+                } else {
+                  setTheme("light");
+                }
+              }
+              // if a user does not have system theme or has theme stored in localstorage
+              else {
+                setTheme(theme === "light" ? "dark" : "light");
+              }
+            }}
+          >
+            {LightSaver()}
+          </ThemeButton>
+        </Grid>
+      </HeaderInnerContainer>
+    </HeaderContainer>
   );
 }

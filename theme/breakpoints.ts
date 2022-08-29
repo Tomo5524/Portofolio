@@ -1,7 +1,13 @@
-export const breakpoints = {
-  // only 2 breakpoints.
-  lg: "only screen and (min-width: 769px)",
-  sm: "only screen and (min-width: 480px)",
+const customMediaQuery = (minWidth: number) =>
+  `@media (min-width: ${minWidth}px)`;
+
+export const media = {
+  // custom: customMediaQuery,
+  // desktop: customMediaQuery(922),
+  // tablet: customMediaQuery(768),
+  // phone: customMediaQuery(576),
+  lg: customMediaQuery(769),
+  sm: customMediaQuery(480),
   // desktop: "only screen and (min-width: 1400px)",
   // laptop: "only screen and (min-width: 1200px) and (max-width: 1399px)",
   // lg: "only screen and (min-width: 992px) and (max-width: 1199px)",
