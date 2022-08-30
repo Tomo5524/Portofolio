@@ -13,7 +13,27 @@ export const SNSInfo = styled.div`
   align-items: center;
 `;
 
+export const SNSButton = styled.button`
+  padding: 6px 8px;
+  // color: #2c7a7b;
+  // border: 1px solid #2c7a7b;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  margin-right: 24px;
+  transition: background 0.2s ease-in;
+  color: ${(props) => (props.color === "light" ? "#2c7a7b" : "#ffffff")};
+  border: ${(props) =>
+    props.color === "light" ? "1px solid #81E6D9" : "1px solid #2c7a7b"};
+  // border: 1px solid #2c7a7b;
+  &:hover {
+    background: ${(props) => (props.color === "light" ? "#E6FFFA" : "#4FD1C5")};
+    // background: #e6fffa;
+  }
+`;
+
 export const ResumeLink = styled.a`
+    margin-right:24px;
     display: flex;
     align-items: center;
     justify-content: center;
