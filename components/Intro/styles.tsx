@@ -22,25 +22,10 @@ export const IntroContainer = styled.section`
   }
 `;
 
-// background: ${(props) => (props.color === "light" ? "#f7f6ee" : "#495049")};
 export const Title = styled.div`
   font-weight: bold;
 `;
-// --c: ${(props) => (props.color === "light" ? "#f7f6ee" : "#495049")};
-// background: ${(props) => (props.color === "light" ? "#f7f6ee" : "#495049")};
-// ${(props) => {
-//   if (props.color === "light") {
-//     return `
-//     --c:#f7f6ee;
-// `;
-//   } else {
-//     return `
-//     --c: #495049;
-// `;
-//   }
-// }}
-// border: ${(props) =>
-//   props.color === "dark" ? "solid #fffffb" : "solid #0000"};
+
 export const ResumeLink = styled.a`
   text-align: center;
   --c: #495049; /* the color */
