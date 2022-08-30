@@ -5,6 +5,7 @@ export const HeaderContainer = styled.nav`
   width: 100%;
   display: flex;
   background: #2c302d;
+
   ${(theme) =>
     theme &&
     `

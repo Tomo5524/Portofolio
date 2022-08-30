@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
+import Intro from "../components/Intro/intro";
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Hiya</h1>
+        <Intro />
       </main>
 
       <footer className={styles.footer}>
