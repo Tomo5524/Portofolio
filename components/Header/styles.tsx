@@ -4,13 +4,9 @@ import { media } from "../../theme/breakpoints";
 export const HeaderContainer = styled.nav`
   width: 100%;
   display: flex;
-  background: #2c302d;
-
-  ${(theme) =>
-    theme &&
-    `
-  background: #ffffff40;
-  `}
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 1;
+  backdrop-filter: blur(10px);
 `;
 
 export const HeaderInnerContainer = styled.div`
