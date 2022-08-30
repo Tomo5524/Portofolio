@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap");
+
+* {
+  font-family: "Montserrat";
+}
+
 :root {
   --background: #f0ecdb;
   --foreground: #363537;
@@ -11,6 +17,7 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  /* transition: all 0.2s linear; */
   transition: background 0.5s linear, color 0.5s linear;
 }
 a {
