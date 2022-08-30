@@ -14,7 +14,9 @@ export default function Intro() {
       </Title>
       <h2>Building Web applications with latest technologies</h2>
       <Link href="/resume" passHref>
-        <ResumeLink>Learn more about my background</ResumeLink>
+        <ResumeLink color={theme}>
+          <span>Learn more about my background</span>
+        </ResumeLink>
       </Link>
     </IntroContainer>
   );

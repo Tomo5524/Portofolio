@@ -26,7 +26,21 @@ export const IntroContainer = styled.section`
 export const Title = styled.div`
   font-weight: bold;
 `;
-
+// --c: ${(props) => (props.color === "light" ? "#f7f6ee" : "#495049")};
+// background: ${(props) => (props.color === "light" ? "#f7f6ee" : "#495049")};
+// ${(props) => {
+//   if (props.color === "light") {
+//     return `
+//     --c:#f7f6ee;
+// `;
+//   } else {
+//     return `
+//     --c: #495049;
+// `;
+//   }
+// }}
+// border: ${(props) =>
+//   props.color === "dark" ? "solid #fffffb" : "solid #0000"};
 export const ResumeLink = styled.a`
   text-align: center;
   --c: #495049; /* the color */
@@ -34,7 +48,8 @@ export const ResumeLink = styled.a`
   --d: 20px; /* the cube depth */
   --_s: calc(var(--d) + var(--b));
   color: var(--c);
-  border: solid #0000;
+  border: ${(props) =>
+    props.color === "light" ? "solid #0000" : "solid #ececec"};
   padding: 4px;
   border-width: var(--b) var(--b) var(--_s) var(--_s);
   background: conic-gradient(
@@ -66,5 +81,8 @@ export const ResumeLink = styled.a`
       calc(100% - var(--d)) 100%,
       0% 100%
     );
+  }
+  span {
+    color: ${(props) => (props.color === "light" ? "#363537" : "#f7f6ee")};
   }
 `;
