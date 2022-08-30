@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import Loading from "../Common/Loader/loading";
+import Loading from "../Common/Loader/loader";
 import { LoadingBox } from "./styles";
 
 interface LoadingContainerProps {

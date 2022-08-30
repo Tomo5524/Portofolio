@@ -1,19 +1,18 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, RefObject } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Loading from "../Common/Loader/loading";
+import Loading from "../Common/Loader/loader";
 import { loadGLTFModel } from "../lib/model";
 import { LoadingContainer } from "./three-d-loader";
-// import { ThreeDImageSpinner, ThreeDImageContainer } from "./voxel-dog-loader";
 
 function easeOutCirc(x: number) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-const VoxelDog = () => {
-  const refContainer = useRef(null);
+const VoxelComputer = () => {
+  const refContainer: RefObject<HTMLDivElement> = useRef(null);
   const [loading, setLoading] = useState(true);
-  const refRenderer = useRef();
+  const refRenderer: RefObject<any> = useRef(null);
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
@@ -21,7 +20,6 @@ const VoxelDog = () => {
     if (container && renderer) {
       const scW = container.clientWidth;
       const scH = container.clientHeight;
-
       renderer.setSize(scW, scH);
     }
   }, []);
@@ -44,23 +42,24 @@ const VoxelDog = () => {
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
 
-      const target = new THREE.Vector3(-0.5, 1.2, 0);
+      const target = new THREE.Vector3(0, -0.15, 0.3);
       const initialCameraPosition = new THREE.Vector3(
-        20 * Math.sin(0.2 * Math.PI),
+        20 * Math.sin(0.5 * Math.PI),
         10,
-        20 * Math.cos(0.2 * Math.PI)
+        20 * Math.cos(0.5 * Math.PI)
       );
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 4.8;
+      // const scale = scH * 0.0018;
+      const scale = scH * 0.0013;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
-        0.01,
-        50000
+        0.1,
+        3000
       );
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
@@ -80,7 +79,7 @@ const VoxelDog = () => {
         setLoading(false);
       });
 
-      let req = null;
+      let req: number | null = null;
       let frame = 0;
       const animate = () => {
         req = requestAnimationFrame(animate);
@@ -105,7 +104,7 @@ const VoxelDog = () => {
       };
 
       return () => {
-        cancelAnimationFrame(req);
+        cancelAnimationFrame(req!);
         renderer.domElement.remove();
         renderer.dispose();
       };
@@ -126,4 +125,4 @@ const VoxelDog = () => {
   );
 };
 
-export default VoxelDog;
+export default VoxelComputer;

@@ -26,7 +26,7 @@ export const Title = styled.div`
   font-weight: bold;
 `;
 
-export const ResumeLink = styled.a`
+export const ProjectLink = styled.a`
   text-align: center;
   --c: #495049; /* the color */
   --b: 0.1em; /* border length*/
