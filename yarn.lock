@@ -388,6 +388,18 @@
     "@types/react" "*"
     csstype "^3.0.2"
 
+"@types/three@^0.143.2":
+  version "0.143.2"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.143.2.tgz#e3c3d121cbe6b868e226d91ea24896b7cdc5d4eb"
+  integrity sha512-HjsRWvd6rsXViFeOdU97/pHNDQknzJbFI0/5MrQ0joOlK0uixQH40sDJs/LwkNHhFYUvVENXAUQdKDeiQChHDw==
+  dependencies:
+    "@types/webxr" "*"
+
+"@types/webxr@*":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@types/webxr/-/webxr-0.5.0.tgz#aae1cef3210d88fd4204f8c33385a0bbc4da07c9"
+  integrity sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==
+
 "@typescript-eslint/parser@^5.21.0":
   version "5.35.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.35.1.tgz#bf2ee2ebeaa0a0567213748243fb4eec2857f04f"

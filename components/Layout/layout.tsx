@@ -1,8 +1,15 @@
+import dynamic from "next/dynamic";
 import { Router } from "next/router";
 import React, { useEffect, useState } from "react";
 import Header from "../Header/header";
+import LightSaberLoader from "../Three-d-Image/three-d-loader";
 import { Container } from "./styles";
 // import Footer from "./footer";
+
+const LazyVoxelDog = dynamic(() => import("../Three-d-Image/three-d"), {
+  ssr: false,
+  loading: () => <LightSaberLoader />,
+});
 
 export default function Layout({
   children,

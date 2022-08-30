@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { media } from "../../theme/breakpoints";
-interface IntroContainer {
-  color: boolean;
-}
+// interface IntroContainer {
+//   color: boolean;
+// }
 
 // export const IntroContainer = styled.section<IntroContainer>`
 //   background: ${() => (color ? "#f7f6ee" : "#495049")};
@@ -34,7 +34,7 @@ export const ResumeLink = styled.a`
   --_s: calc(var(--d) + var(--b));
   color: var(--c);
   border: ${(props) =>
-    props.color === "light" ? "solid #0000" : "solid #ececec"};
+    props.color === "light" ? "solid #0000" : "solid #9a9a9a"};
   padding: 4px;
   border-width: var(--b) var(--b) var(--_s) var(--_s);
   background: conic-gradient(
