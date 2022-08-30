@@ -11,7 +11,7 @@ export const LoadingBox = styled.div`
   ${media.lg} {
     width: 640px;
     height: 640px;
-    margin-top: -120px;
+    margin-top: -100px;
     margin-bottom: -200px;
   }
   // ${media.sm} {

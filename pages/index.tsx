@@ -30,6 +30,7 @@ const Home: NextPage = () => {
       <main>
         <Intro />
         <Credentials />
+        {/* Stacks */}
       </main>
 
       {/* <footer className={styles.footer}>
