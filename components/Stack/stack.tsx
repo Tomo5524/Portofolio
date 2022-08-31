@@ -25,7 +25,7 @@ export default function Stack() {
       </TechStack>
       <TechStack>
         <TechStackTitle>Tools/Methods:</TechStackTitle>
-        Redux, Vuex, Webpack, GraphQL, Contentful.
+        Redux, Vuex, Webpack, GraphQL.
       </TechStack>
       <TechStack>
         <TechStackTitle>Backend:</TechStackTitle> Nodejs, Express.
@@ -34,7 +34,10 @@ export default function Stack() {
         <TechStackTitle>Database:</TechStackTitle> MongoDB, PostgreSQL.
       </TechStack>
       <TechStack>
-        <TechStackTitle>OS:</TechStackTitle>MacOS, Linux, Windows
+        <TechStackTitle>OS:</TechStackTitle>MacOS, Linux, Windows.
+      </TechStack>
+      <TechStack>
+        <TechStackTitle>CMS:</TechStackTitle>Contentful.
       </TechStack>
     </StackContainer>
   );
