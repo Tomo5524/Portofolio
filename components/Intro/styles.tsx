@@ -39,6 +39,9 @@ export const ProjectLink = styled.a`
   --d: 20px; /* the cube depth */
   --_s: calc(var(--d) + var(--b));
   color: var(--c);
+  &:focus-visible {
+    border: 1px solid rgba(66, 153, 225, 0.6);
+  }
   border: ${(props) =>
     props.color === "light" ? "solid #0000" : "solid #9a9a9a"};
   padding: 4px;
