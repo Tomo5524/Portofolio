@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Intro from "../components/Intro/intro";
 import Credentials from "../components/Credentials/credentials";
 import Work from "../components/Work/work";
+import Stack from "../components/Stack/stack";
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
         <Intro />
         <Credentials />
         <Work />
-        {/* Stacks */}
+        <Stack />
       </main>
 
       {/* <footer className={styles.footer}>
