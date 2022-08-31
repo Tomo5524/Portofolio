@@ -1,0 +1,103 @@
+@media screen and (min-width: 640px) {
+  .alice-carousel__wrapper {
+    padding-right: 293px !important;
+    /* add right padding to keep gap 24px consistent. This is a fixed value since a fixed width is calculated */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .alice-carousel__wrapper {
+    padding-right: 0px !important;
+    /* add right padding to keep gap 24px consistent. This is a fixed value since a fixed width is calculated */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .alice-carousel__wrapper {
+    padding-right: 432px !important;
+    /* add right padding to keep gap 24px consistent. This is a fixed value since a fixed width is calculated */
+  }
+}
+
+.image-card {
+  background: linear-gradient(180deg, rgba(20, 28, 46, 0) 0%, #141c2e 92.58%);
+}
+
+.slick-next:before {
+  display: none;
+}
+
+.slick-prev:before {
+  display: none;
+}
+
+.slick-track {
+  scroll-snap-type: x mandatory;
+}
+.slick-slide {
+  scroll-snap-align: start;
+}
+
+.slick-next,
+.slick-prev {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  /* top: 50%; */
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: 0;
+  background: 0 0;
+}
+
+.slick-prev {
+  left: unset !important;
+  font-size: 0;
+  line-height: 0;
+  top: unset !important;
+  /* width: 20px ;
+  height: 20px; */
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: 0;
+  background: 0 0;
+}
+
+.slick-next {
+  right: unset !important;
+  font-size: 0;
+  line-height: 0;
+  top: unset !important;
+}
+
+/* @media screen and (max-width: 398px) {
+  .slick-slide {
+    padding-right: 0 !important;
+  }
+} */
+
+.slick-slide {
+  /* padding-right: 24px !important; */
+  /* width: 410px !important; */
+}
+
+.slick-slide {
+  /* margin: 0 12px; */
+  /* padding-right: 24px; */
+}
+
+/* the parent */
+.slick-list {
+  /* margin: 0 -12px; */
+  /* padding-right: -24px; */
+}
