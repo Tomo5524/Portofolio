@@ -4,9 +4,8 @@ import { LogoBox } from "./styles";
 import { LogoSVG } from "./logoSVG";
 
 const Logo = () => {
-  // const footPrintImg = "";
   // const logo = `/images/Mylogo-${getTheme("", "-dark")}.png`;
-  const logo = "/images/Mylogo.png";
+  // const logo = "/images/Mylogo.png";
   // const logo = "/images/footprint.png";
 
   return (

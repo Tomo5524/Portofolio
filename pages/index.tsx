@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import Intro from "../components/Intro/intro";
 import Credentials from "../components/Credentials/credentials";
+import Work from "../components/Work/work";
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
       <main>
         <Intro />
         <Credentials />
+        <Work />
         {/* Stacks */}
       </main>
 
