@@ -1,8 +1,6 @@
-import dynamic from "next/dynamic";
 import { Router } from "next/router";
 import React, { useEffect, useState } from "react";
 import Header from "../Header/header";
-import LightSaberLoader from "../Three-d-Image/three-d-loader";
 import { Container } from "./styles";
 // import Footer from "./footer";
 
@@ -18,10 +16,13 @@ export default function Layout({
   useEffect(() => {
     setMounted(true);
   }, []);
-  const Three_D_Component = dynamic(() => import("../Three-d-Image/three-d"), {
-    ssr: false,
-    loading: () => <LightSaberLoader />,
-  });
+
+  // If I call 3D component here, this will render in every page.
+  // const Three_D_Component = dynamic(() => import("../Three-d-Image/three-d"), {
+  //   ssr: false,
+  //   loading: () => <LightSaberLoader />,
+  // });
+
   // Because we cannot know the theme on the server, many of the values returned from useTheme will be undefined until mounted on the client.so first render should be null
   if (!mounted) return null;
   return (
@@ -29,7 +30,7 @@ export default function Layout({
       {/* asPath: String - The path as shown in the browser including the search params and respecting the trailingSlash configuration. basePath and locale are not included. */}
       <Header path={router.asPath} />
       <Container>
-        <Three_D_Component />
+        {/* <Three_D_Component /> */}
         {children}
       </Container>
       {/* <Footer /> */}
