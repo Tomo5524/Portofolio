@@ -15,7 +15,13 @@ export const IntroContainer = styled.section`
   border-radius: 10px;
   margin-top: 16px;
   padding: 8px;
-  background: ${(props) => (props.color === "light" ? "#f7f6ee" : "#495049")};
+  background: ${(props) =>
+    props.color === "light"
+      ? "rgba(255, 255, 255, 0.25)"
+      : "rgba(255, 255, 255, 0.1)"};
+  z-index: 1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   ${media.lg} {
     margin-top: 24px;
     padding: 16px;
