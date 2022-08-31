@@ -3,6 +3,8 @@ import { media } from "../../theme/breakpoints";
 
 export const HeaderContainer = styled.nav`
   width: 100%;
+  position: fixed;
+  top: 0;
   display: flex;
   background: rgba(255, 255, 255, 0.25);
   z-index: 1;
@@ -66,6 +68,9 @@ export const ThemeButton = styled.button`
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  }
   &:before {
     content: "";
     background: linear-gradient(
