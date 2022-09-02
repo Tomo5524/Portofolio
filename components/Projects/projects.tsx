@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Carousel from "../Carousel/carousel";
 import {
   HomeLink,
   HomeLinkContainer,
@@ -17,6 +18,7 @@ export default function ProjectPage() {
           </HomeLink>
         </Link>
       </HomeLinkContainer>
+      <Carousel />
     </ProjectContainer>
   );
 }

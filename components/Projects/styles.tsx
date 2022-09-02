@@ -3,8 +3,9 @@ import { media } from "../../theme/breakpoints";
 
 export const ProjectContainer = styled.section`
   background-image: url("/images/modern-futuristic-sci-fi-background.jpg");
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  // max-width: 100vw;
+  color: #fffffb;
   // equivalent of
   // width : 100%;
   // margin: 0
@@ -21,7 +22,12 @@ export const ProjectContainer = styled.section`
 export const HomeLinkContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  ${media.lg} {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
 `;
 
 export const HomeLink = styled.a`
