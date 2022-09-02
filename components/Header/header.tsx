@@ -43,6 +43,7 @@ export default function Header({ path }: HeaderProps) {
           </HeaderMenuContainer>
           <ThemeButton
             theme={theme === "light"}
+            aria-label="Toggle theme"
             onClick={() => {
               // if a user has system theme, select the opposite color of system theme. also first time to visit the website, no theme is stored in localstorage
               if (theme === "system") {

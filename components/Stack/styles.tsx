@@ -17,8 +17,8 @@ export const TechStack = styled.div`
   display: flex;
   align-items: center;
   padding-left: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 `;
 
 export const TechStackTitle = styled.p`

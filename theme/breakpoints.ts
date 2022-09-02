@@ -6,6 +6,7 @@ export const media = {
   // desktop: customMediaQuery(922),
   // tablet: customMediaQuery(768),
   // phone: customMediaQuery(576),
+  xl: customMediaQuery(1441),
   lg: customMediaQuery(769),
   sm: customMediaQuery(480),
   // desktop: "only screen and (min-width: 1400px)",
