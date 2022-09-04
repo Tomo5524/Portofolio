@@ -22,9 +22,9 @@ export const ProjectContainer = styled.section`
 export const HomeLinkContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 90px;
   padding-bottom: 20px;
-  ${media.lg} {
+  ${media.md} {
     padding-top: 50px;
     padding-bottom: 40px;
   }
