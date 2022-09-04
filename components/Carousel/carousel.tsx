@@ -5,6 +5,8 @@ import { CarouselItems } from "./data";
 import {
   CarouselContainer,
   CarouselSection,
+  DescriptionContainer,
+  ImageContainer,
   InnerContainer,
   Item,
   ItemContainer,
@@ -14,6 +16,12 @@ import {
   ItemStack,
   ItemTitle,
   LinkContainer,
+  TextContainer,
+  TextDesktopContainer,
+  TextMobileContainer,
+  TextTabletContainer,
+  TitleContainer,
+  TitleMobile,
 } from "./styles";
 
 export default function Carousel() {
@@ -41,11 +49,11 @@ export default function Carousel() {
   }, []);
 
   const displayedItems = useMemo(() => {
-    console.log(currentWidth);
     return CarouselItems.map((item, index) => {
       return (
         <div className={`keen-slider__slide number-slide${index}`} key={index}>
           <ItemTitle>{item.title}</ItemTitle>
+          {/* <ImageContainer> */}
           <Item results={currentWidth}>
             {/* <ItemLink href={item.url}>go to project</ItemLink> */}
 
@@ -53,7 +61,7 @@ export default function Carousel() {
               src={item.imgURL}
               layout="fill"
               objectFit="cover"
-              alt="logo"
+              alt={item.alt}
             />
 
             {/* <Image
@@ -68,44 +76,59 @@ export default function Carousel() {
               </InnerContainer>
             </ItemLinkContainer>
           </Item>
-          <ItemDescription>{item.description}</ItemDescription>
-          <ItemStack>
-            <span>Stacks: </span>
-            {item.stack}
-          </ItemStack>
+          {/* </ImageContainer> */}
+          <TextDesktopContainer>
+            <ItemDescription>{item.description}</ItemDescription>
+            <ItemStack>
+              <span>Stacks: </span>
+              {item.stack}
+            </ItemStack>
+          </TextDesktopContainer>
         </div>
       );
     });
   }, [CarouselItems, currentWidth]);
 
   return (
-    <CarouselSection ref={ref}>
-      <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider">
-          {displayedItems}
-        </div>
-        {loaded && instanceRef.current && (
-          <>
-            <Arrow
-              left
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
-              disabled={currentSlide === 0}
-            />
+    <CarouselSection>
+      <TitleMobile>{CarouselItems[currentSlide].title}</TitleMobile>
+      <CarouselContainer ref={ref}>
+        <div className="navigation-wrapper">
+          <div ref={sliderRef} className="keen-slider">
+            {displayedItems}
+          </div>
+          {loaded && instanceRef.current && (
+            <>
+              <Arrow
+                left
+                onClick={(e: any) =>
+                  e.stopPropagation() || instanceRef.current?.prev()
+                }
+                disabled={currentSlide === 0}
+              />
 
-            <Arrow
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
-              disabled={
-                currentSlide ===
-                instanceRef.current.track.details.slides.length - 1
-              }
-            />
-          </>
-        )}
-      </div>
+              <Arrow
+                onClick={(e: any) =>
+                  e.stopPropagation() || instanceRef.current?.next()
+                }
+                disabled={
+                  currentSlide ===
+                  instanceRef.current.track.details.slides.length - 1
+                }
+              />
+            </>
+          )}
+        </div>
+      </CarouselContainer>
+      <TextMobileContainer>
+        <ItemDescription>
+          {CarouselItems[currentSlide].description}
+        </ItemDescription>
+        <ItemStack>
+          <span>Stacks: </span>
+          {CarouselItems[currentSlide].stack}
+        </ItemStack>
+      </TextMobileContainer>
     </CarouselSection>
   );
 }
@@ -115,13 +138,13 @@ function Arrow(props: {
   left?: boolean;
   onClick: (e: any) => void;
 }) {
-  const disabeld = props.disabled ? " arrow--disabled" : "";
+  const isDisabled = props.disabled ? " arrow--disabled" : "";
   return (
     <svg
       onClick={props.onClick}
       className={`arrow ${
         props.left ? "arrow--left" : "arrow--right"
-      } ${disabeld}`}
+      } ${isDisabled}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
