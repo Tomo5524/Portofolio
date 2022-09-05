@@ -135,17 +135,32 @@ export const ItemLinkContainer = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  height: min-content;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  transform: translateY(-20px);
-  cursor: pointer;
-  width: max-content;
+  display: none;
+  ${media.md} {
+    display: flex;
+    justify-content: center;
+    height: min-content;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-20px);
+    cursor: pointer;
+    width: max-content;
+    &:hover {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+`;
+
+export const ItemLinkMobile = styled.a`
+  color: #f0ecdb;
+  font-size: 16px;
   &:hover {
-    opacity: 1;
-    transform: translate(0);
+    border-bottom: 2px solid #fff;
+    padding-bottom: 4px;
+  }
+  ${media.md} {
+    display: none;
   }
 `;
 
@@ -196,8 +211,8 @@ export const DescriptionContainer = styled.div`
 export const ItemDescription = styled.p`
   font-weight: 600;
   font-size: 14px;
+  margin-top: 24px;
   ${media.lg} {
-    margin-top: 24px;
     font-size: 18px;
   }
 `;

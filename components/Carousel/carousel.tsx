@@ -13,6 +13,7 @@ import {
   ItemDescription,
   ItemLink,
   ItemLinkContainer,
+  ItemLinkMobile,
   ItemStack,
   ItemTitle,
   LinkContainer,
@@ -55,8 +56,6 @@ export default function Carousel() {
           <ItemTitle>{item.title}</ItemTitle>
           {/* <ImageContainer> */}
           <Item results={currentWidth}>
-            {/* <ItemLink href={item.url}>go to project</ItemLink> */}
-
             <Image
               src={item.imgURL}
               layout="fill"
@@ -121,6 +120,9 @@ export default function Carousel() {
         </div>
       </CarouselContainer>
       <TextMobileContainer>
+        <ItemLinkMobile href={CarouselItems[currentSlide].url}>
+          go to project
+        </ItemLinkMobile>
         <ItemDescription>
           {CarouselItems[currentSlide].description}
         </ItemDescription>
