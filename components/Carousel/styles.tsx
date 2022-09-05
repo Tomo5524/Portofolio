@@ -3,14 +3,22 @@ import { media } from "../../theme/breakpoints";
 
 export const CarouselSection = styled.section`
   position: absolute;
-  inset: 0;
-  top: 30%;
+  // inset: 0;
+  // top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 25%;
   margin: auto;
   ${media.sm} {
-    top: 25%;
+    top: 30%;
   }
   ${media.md} {
-    position: static;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
   }
 `;
 
