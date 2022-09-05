@@ -22,7 +22,7 @@ export const TechStack = styled.div`
 `;
 
 export const TechStackTitle = styled.p`
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   margin: 0;
   padding-right: 16px;
