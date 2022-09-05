@@ -6,7 +6,4 @@ export const FooterContainer = styled.div`
   padding: 16px;
   text-align: center;
   opacity: 0.5;
-  // ${media.lg} {
-
-  // }
 `;
