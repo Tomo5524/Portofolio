@@ -8,6 +8,7 @@ import LightSaberLoader from "../components/Three-d-Image/three-d-loader";
 import dynamic from "next/dynamic";
 import Layout from "../components/Layout/layout";
 import { Router } from "next/router";
+import Footer from "../components/Footer/footer";
 
 const Home: NextPage = () => {
   // const [mounted, setMounted] = useState(false);
@@ -41,6 +42,7 @@ const Home: NextPage = () => {
         <Work />
         <Stack />
       </main>
+      <Footer />
       {/* <footer className={styles.footer}>
     <a
       href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

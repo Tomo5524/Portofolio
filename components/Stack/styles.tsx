@@ -15,10 +15,18 @@ export const StackContainer = styled.section`
 
 export const TechStack = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   padding-left: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
+  ${media.md} {
+    flex-direction: row;
+    align-items: center;
+  }
+  ${media.lg} {
+    padding: 16px;
+  }
 `;
 
 export const TechStackTitle = styled.p`
@@ -26,4 +34,8 @@ export const TechStackTitle = styled.p`
   font-weight: 700;
   margin: 0;
   padding-right: 16px;
+  padding-bottom: 8px;
+  ${media.md} {
+    padding-bottom: 0;
+  }
 `;
