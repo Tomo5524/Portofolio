@@ -5,29 +5,36 @@ export const HeaderContainer = styled.nav`
   width: 100%;
   position: fixed;
   top: 0;
-  display: flex;
   background: rgba(255, 255, 255, 0.25);
   z-index: 1;
   backdrop-filter: blur(10px);
 `;
 
 export const HeaderInnerContainer = styled.div`
-  max-width: 768px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+  ${media.md} {
+    max-width: 768px;
+    margin: 0 auto;
+  }
 `;
 
-export const LogoContainer = styled.div`
-  margin-left: 20px;
-  grid-column-start: 1;
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
+
+export const LogoContainer = styled.div``;
 
 export const HeaderMenuContainer = styled.ul`
   display: none;
-  ${media.lg} {
+  ${media.md} {
     display: flex;
-    align-items: center;
+    padding: 0;
     list-style: none;
-    grid-column-start: 3;
   }
 `;
 
@@ -39,27 +46,19 @@ export const HeaderList = styled.li`
 export const HeaderItem = styled.a`
   text-decoration: none;
   padding-bottom: 4px;
-  ${(theme) =>
-    theme &&
-    `
-    &:hover {
-      border-bottom : 2px solid #fffffb ;
-    }
-  `}
-  &:hover {
-    border-bottom: 2px solid #363537;
-  }
+  ${(props) =>
+    props.color === "light"
+      ? " &:hover {border-bottom : 2px solid #363537}"
+      : " &:hover {border-bottom: 2px solid #fffffb}"}
 `;
 
 export const ThemeButton = styled.button`
   user-select: none;
   position: relative;
   white-space: nowrap;
-  align-self: center;
   appearance: none;
-  // grid-column-start: 4;
   width: 40px;
-  height: 30px;
+  height: 40px;
   border: none;
   outline: none;
   color: #fff;
@@ -129,7 +128,161 @@ export const ThemeButton = styled.button`
       background-position: 0 0;
     }
   }
-  ${media.lg} {
-    grid-column-start: 12;
+`;
+
+export const MobileMenuContainer = styled.div`
+  margin-left: 16px;
+  padding-bottom: 5px;
+  ${media.md} {
+    display: none;
   }
+`;
+
+export const Hamburger = styled.label`
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: #e2e8f0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #e2e8f0,
+      #a2a2a2
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #e2e8f0,
+      #a2a2a2
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transform: rotate(0deg);
+    transition: all 0.4s cubic-bezier(0.54, -0.1, 0.57, 0.57);
+  }
+
+  .hamburger-input {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+
+  .hamburger-line {
+    width: 100%;
+    background: #fff;
+    height: 2px;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    position: relative;
+
+    &.first,
+    &.third {
+      width: 50%;
+    }
+
+    &.third {
+      margin-left: 50%;
+      transform-origin: left;
+    }
+  }
+`;
+
+export const MenuButtonWrapper = styled.label`
+  position: relative;
+  display: inline-block;
+  .item-list {
+    list-style: none;
+    margin-top: 15px;
+    position: absolute;
+    transform: translateX(-50%) scale(0);
+    transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.54, -0.1, 0.57, 0.57);
+    background-color: #303242;
+    color: #fff;
+    width: 140px;
+    left: -20px;
+    padding: 16px;
+    text-align: left;
+    border-radius: 10px;
+    font-weight: 300;
+    opacity: 0;
+    user-select: none;
+
+    div {
+      padding: 10px 30px;
+      cursor: pointer;
+    }
+  }
+
+  .menu-button {
+    margin: 0;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+  }
+`;
+
+export const MenuButton = styled.input`
+  &:checked ~ .item-list {
+    transform: translateX(-50%) scale(1);
+    border-radius: 10px;
+    opacity: 1;
+    user-select: auto;
+  }
+
+  &:checked ~ .icon-wrapper .hamburger-line.second {
+    transform: rotate(-45deg);
+  }
+
+  &:checked ~ .icon-wrapper .hamburger-line.first {
+    transform: translate(2px, 8px) rotate(-135deg);
+  }
+
+  &:checked ~ .icon-wrapper .hamburger-line.third {
+    transform: translate(11px, -3px) rotate(-135deg);
+  }
+
+  &:checked ~ .icon-wrapper .hamburger:before {
+    transform: rotate(45deg);
+  }
+`;
+
+export const HamburgerInput = styled.input``;
+
+export const HamburgerSpan = styled.span``;
+
+// ${(props) => {
+//   if (props.itemProp === "first") {
+//     return "width: 50%";
+//   } else if (props.itemProp === "third") {
+//     return "margin-left: 50%: transform-origin: left'";
+//   }
+// }}
+
+export const ItemList = styled.div``;
+
+export const IconWrapper = styled.div``;
+
+export const MobileMenuListItem = styled.li`
+  margin: 8px 0;
+  cursor: pointer;
 `;
