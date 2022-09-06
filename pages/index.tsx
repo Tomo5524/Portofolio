@@ -9,18 +9,9 @@ import dynamic from "next/dynamic";
 import Layout from "../components/Layout/layout";
 import { Router } from "next/router";
 import Footer from "../components/Footer/footer";
+import { Container } from "../components/Foundations/foundations";
 
 const Home: NextPage = () => {
-  // const [mounted, setMounted] = useState(false);
-  // const { theme, setTheme } = useTheme();
-  // useEffect only runs on the client, so now we can safely show the UI
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
-
-  // if (!mounted) {
-  //   return null;
-  // }
   const Three_D_Component = dynamic(
     () => import("../components/Three-d-Image/three-d"),
     {
@@ -37,10 +28,12 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Three_D_Component />
-        <Intro />
-        <Credentials />
-        <Work />
-        <Stack />
+        <Container>
+          <Intro />
+          <Credentials />
+          <Work />
+          <Stack />
+        </Container>
       </main>
       <Footer />
       {/* <footer className={styles.footer}>

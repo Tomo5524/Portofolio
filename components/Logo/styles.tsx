@@ -6,7 +6,6 @@ export const LogoBox = styled.span`
   height: 80px;
   width: 80px;
   line-height: 20px;
-  padding: 10px;
   svg {
     transition: 200ms ease;
   }

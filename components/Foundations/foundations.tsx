@@ -10,3 +10,8 @@ export const Grid = styled.div`
     grid-template-columns: repeat(9, minmax(0, 1fr));
   }
 `;
+
+export const Container = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`;

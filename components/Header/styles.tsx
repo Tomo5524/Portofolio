@@ -14,7 +14,6 @@ export const HeaderInnerContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
   width: 100%;
   ${media.md} {
     max-width: 768px;
