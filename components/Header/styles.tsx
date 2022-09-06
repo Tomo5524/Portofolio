@@ -15,9 +15,11 @@ export const HeaderInnerContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0 16px;
   ${media.md} {
     max-width: 768px;
     margin: 0 auto;
+    padding: 0;
   }
 `;
 
@@ -26,7 +28,17 @@ export const ButtonContainer = styled.div`
   align-items: center;
 `;
 
-export const LogoContainer = styled.div``;
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  svg {
+    transition: 200ms ease;
+  }
+  &:hover svg {
+    transform: rotate(20deg);
+  }
+}
+`;
 
 export const HeaderMenuContainer = styled.ul`
   display: none;
@@ -282,6 +294,6 @@ export const ItemList = styled.div``;
 export const IconWrapper = styled.div``;
 
 export const MobileMenuListItem = styled.li`
-  margin: 8px 0;
+  margin: 16px 0;
   cursor: pointer;
 `;
