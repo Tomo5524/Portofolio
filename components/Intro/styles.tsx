@@ -14,7 +14,8 @@ export const IntroContainer = styled.section`
   align-items: center;
   border-radius: 10px;
   margin-top: 16px;
-  padding: 8px;
+  padding: 16px;
+  text-align: center;
   background: ${(props) =>
     props.color === "light"
       ? "rgba(255, 255, 255, 0.25)"
@@ -25,6 +26,14 @@ export const IntroContainer = styled.section`
   ${media.lg} {
     margin-top: 24px;
     padding: 16px;
+  }
+  h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    ${media.md} {
+      font-size: 24px;
+      padding: 16px;
+    }
   }
 `;
 

@@ -6,7 +6,7 @@ export default function Work() {
   return (
     <WorkContainer color={theme}>
       <Title>
-        <TitleText>Work</TitleText>
+        <TitleText>Work 💻</TitleText>
       </Title>
       <Description>
         Hi, I am a frontend developer, currently based in Japan, working at a
