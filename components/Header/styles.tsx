@@ -30,7 +30,7 @@ export const ButtonContainer = styled.div`
 
 export const LogoContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: end;
   svg {
     transition: 200ms ease;
   }

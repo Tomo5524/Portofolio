@@ -11,14 +11,15 @@ import { Router } from "next/router";
 import Footer from "../components/Footer/footer";
 import { Container } from "../components/Foundations/foundations";
 
+const Three_D_Component = dynamic(
+  () => import("../components/Three-d-Image/three-d"),
+  {
+    ssr: false,
+    loading: () => <LightSaberLoader />,
+  }
+);
+
 const Home: NextPage = () => {
-  const Three_D_Component = dynamic(
-    () => import("../components/Three-d-Image/three-d"),
-    {
-      ssr: false,
-      loading: () => <LightSaberLoader />,
-    }
-  );
   return (
     <>
       <Head>
