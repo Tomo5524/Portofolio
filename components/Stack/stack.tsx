@@ -8,7 +8,7 @@ export default function Stack() {
   return (
     <StackContainer color={theme}>
       <Title>
-        <TitleText>Tech Stack</TitleText>
+        <TitleText>Tech Stack 🛠</TitleText>
       </Title>
       <TechStack>
         <TechStackTitle>Languages:</TechStackTitle>
