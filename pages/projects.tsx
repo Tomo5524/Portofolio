@@ -6,15 +6,15 @@ import ProjectPage from "../components/Projects/projects";
 import "keen-slider/keen-slider.min.css";
 
 const Projects: NextPage = () => {
-  const [mounted, setMounted] = useState(false);
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // const [mounted, setMounted] = useState(false);
+  // // useEffect only runs on the client, so now we can safely show the UI
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  // if (!mounted) {
+  //   return null;
+  // }
   return (
     <div>
       <Head>

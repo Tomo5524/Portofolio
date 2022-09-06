@@ -8,7 +8,6 @@ import {
 } from "./styles";
 
 export default function ProjectPage() {
-  // Todo. not render 3D image in project page
   return (
     <ProjectContainer>
       <HomeLinkContainer>
