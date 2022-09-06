@@ -13,7 +13,7 @@ export const IntroContainer = styled.section`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  margin-top: 16px;
+  // margin-top: 16px;
   padding: 16px;
   text-align: center;
   background: ${(props) =>

@@ -42,17 +42,15 @@ const VoxelComputer = () => {
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
 
-      const target = new THREE.Vector3(0, -0.15, 0.3);
+      const target = new THREE.Vector3(0, -0.1, 0.3);
       const initialCameraPosition = new THREE.Vector3(
         20 * Math.sin(0.5 * Math.PI),
         10,
         20 * Math.cos(0.5 * Math.PI)
       );
 
-      // 640 -> 240
-      // 8   -> 6
-      // const scale = scH * 0.0018;
-      const scale = scH * 0.0013;
+      // if scH is equal or greater than 640, scale up. If not scale down.
+      const scale = scH >= 640 ? scH * 0.0013 : scH * 0.0019;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -61,6 +59,7 @@ const VoxelComputer = () => {
         0.1,
         3000
       );
+
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
 
