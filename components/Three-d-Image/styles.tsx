@@ -3,10 +3,10 @@ import { media } from "../../theme/breakpoints";
 
 export const LoadingBox = styled.div`
   margin: 0 auto;
-  position: relative
+  position: relative;
   width: 280px;
   height: 280px;
-  margin-top: -20px;
+  margin-top: 80px;
   margin-bottom: -40px;
   ${media.lg} {
     width: 640px;
