@@ -6,10 +6,4 @@ export const LogoBox = styled.span`
   height: 80px;
   width: 80px;
   line-height: 20px;
-  svg {
-    transition: 200ms ease;
-  }
-  &:hover svg {
-    transform: rotate(20deg);
-  }
 `;
