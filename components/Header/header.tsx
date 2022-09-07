@@ -9,7 +9,6 @@ import {
   HeaderContainer,
   HeaderInnerContainer,
   HeaderItem,
-  HeaderList,
   HeaderMenuContainer,
   LogoContainer,
   ThemeButton,
