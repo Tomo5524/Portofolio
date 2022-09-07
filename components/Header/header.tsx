@@ -9,7 +9,6 @@ import {
   HeaderContainer,
   HeaderInnerContainer,
   HeaderItem,
-  HeaderList,
   HeaderMenuContainer,
   LogoContainer,
   ThemeButton,
@@ -37,11 +36,11 @@ export default function Header({ path }: HeaderProps) {
         <HeaderMenuContainer>
           {HeaderData.map((item, idx) => {
             return (
-              <HeaderList key={idx}>
+              <li key={idx}>
                 <Link href={item.href} passHref>
                   <HeaderItem color={theme}>{item.text}</HeaderItem>
                 </Link>
-              </HeaderList>
+              </li>
             );
           })}
         </HeaderMenuContainer>
