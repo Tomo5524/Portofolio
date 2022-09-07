@@ -47,12 +47,19 @@ export const HeaderMenuContainer = styled.ul`
     padding: 0;
     list-style: none;
   }
+  li {
+    text-decoration: none;
+    padding-left: 24px;
+    &:first-child {
+      padding-left: 0;
+    }
+  }
 `;
 
-export const HeaderList = styled.li`
-  text-decoration: none;
-  padding-left: 24px;
-`;
+// export const HeaderList = styled.li`
+//   text-decoration: none;
+//   padding-left: 24px;
+// `;
 
 export const HeaderItem = styled.a`
   text-decoration: none;
