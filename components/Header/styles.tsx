@@ -19,6 +19,8 @@ export const HeaderInnerContainer = styled.div`
   ${media.md} {
     max-width: 768px;
     margin: 0 auto;
+  }
+  ${media.lg} {
     padding: 0;
   }
 `;
