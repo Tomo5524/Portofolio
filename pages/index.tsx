@@ -10,12 +10,13 @@ import Layout from "../components/Layout/layout";
 import { Router } from "next/router";
 import Footer from "../components/Footer/footer";
 import { Container } from "../components/Foundations/foundations";
+import { Suspense } from "react";
 
 const Three_D_Component = dynamic(
   () => import("../components/Three-d-Image/three-d"),
   {
     ssr: false,
-    loading: () => <LightSaberLoader />,
+    suspense: true,
   }
 );
 
@@ -34,7 +35,9 @@ const Home: NextPage = () => {
         ></link>
       </Head>
       <main>
-        <Three_D_Component />
+        <Suspense fallback={<LightSaberLoader />}>
+          <Three_D_Component />
+        </Suspense>
         <Container>
           <Intro />
           <Credentials />
