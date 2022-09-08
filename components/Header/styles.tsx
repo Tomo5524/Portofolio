@@ -166,7 +166,7 @@ export const Hamburger = styled.label`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  padding: 8px;
+  padding: 5px;
 
   &:before {
     content: "";
@@ -204,7 +204,7 @@ export const Hamburger = styled.label`
   .hamburger-line {
     width: 100%;
     background: #fff;
-    height: 2px;
+    height: 4px;
     display: block;
     border-radius: 6px;
     transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
