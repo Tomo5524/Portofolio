@@ -6,7 +6,7 @@ export const media = {
   // desktop: customMediaQuery(922),
   // tablet: customMediaQuery(768),
   // phone: customMediaQuery(576),
-  xl: customMediaQuery(1440),
+  xl: customMediaQuery(1441),
   lg: customMediaQuery(1280),
   md: customMediaQuery(768),
   sm: customMediaQuery(480),
