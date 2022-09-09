@@ -1,4 +1,11 @@
-import { useState, useEffect, useRef, useCallback, RefObject } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  RefObject,
+  MutableRefObject,
+} from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Loading from "../Common/Loader/loader";
@@ -12,8 +19,8 @@ function easeOutCirc(x: number) {
 const VoxelComputer = () => {
   const refContainer: RefObject<HTMLDivElement> = useRef(null);
   const [loading, setLoading] = useState(true);
-  const refRenderer: RefObject<any> = useRef(null);
-
+  const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> =
+    useRef(null);
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
     const { current: container } = refContainer;

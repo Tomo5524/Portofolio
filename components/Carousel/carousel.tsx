@@ -5,23 +5,15 @@ import { CarouselItems } from "./data";
 import {
   CarouselContainer,
   CarouselSection,
-  DescriptionContainer,
-  ImageContainer,
-  InnerContainer,
   Item,
-  ItemContainer,
   ItemDescription,
   ItemLink,
   ItemLinkContainer,
   ItemLinkMobile,
   ItemStack,
   ItemTitle,
-  LinkContainer,
-  TextContainer,
   TextDesktopContainer,
   TextMobileContainer,
-  TextTabletContainer,
-  TitleContainer,
   TitleMobile,
 } from "./styles";
 import styles from "./carousel.module.css";

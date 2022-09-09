@@ -489,16 +489,11 @@ function BluelightSaber() {
           textAnchor="start"
           transform="matrix(.86175 -.52498 .52026 .854 -143.591 -406.85)"
           style={{
-            WebkitTextIndent: "0",
             textIndent: "0",
-            WebkitTextAlign: "start",
             textAlign: "start",
             lineHeight: "normal",
-            WebkitTextTransform: "none",
             textTransform: "none",
-            blockProgression: "tb",
             marker: "none",
-            InkscapeFontSpecification: "Andale Mono",
           }}
           fontStyle="normal"
           fontWeight="normal"
@@ -513,16 +508,11 @@ function BluelightSaber() {
           fillOpacity="1"
           d="M336.016-122.957l3.122 5.124 379.418-231.143s1.69-1.027.155-3.608c-1.536-2.58-3.277-1.516-3.277-1.516L336.016-122.957z"
           style={{
-            WebkitTextIndent: "0",
             textIndent: "0",
-            WebkitTextAlign: "start",
             textAlign: "start",
             lineHeight: "normal",
-            WebkitTextTransform: "none",
             textTransform: "none",
-            blockProgression: "tb",
             marker: "none",
-            InkscapeFontSpecification: "Andale Mono",
           }}
           stroke="none"
           strokeWidth="6"
@@ -549,16 +539,11 @@ function BluelightSaber() {
           fillOpacity="1"
           d="M705.678-348.157l3.122 5.124 9.756-5.943s1.69-1.027.155-3.608c-1.536-2.58-3.277-1.516-3.277-1.516l-9.756 5.943z"
           style={{
-            WebkitTextIndent: "0",
             textIndent: "0",
-            WebkitTextAlign: "start",
             textAlign: "start",
             lineHeight: "normal",
-            WebkitTextTransform: "none",
             textTransform: "none",
-            blockProgression: "tb",
             marker: "none",
-            InkscapeFontSpecification: "Andale Mono",
           }}
           stroke="none"
           strokeWidth="6"

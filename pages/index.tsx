@@ -10,7 +10,8 @@ import Layout from "../components/Layout/layout";
 import { Router } from "next/router";
 import Footer from "../components/Footer/footer";
 import { Container } from "../components/Foundations/foundations";
-import { Suspense } from "react";
+import { ReactElement, Suspense } from "react";
+import { NextPageWithLayout } from "./_app";
 
 const Three_D_Component = dynamic(
   () => import("../components/Three-d-Image/three-d"),
@@ -20,7 +21,7 @@ const Three_D_Component = dynamic(
   }
 );
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -62,7 +63,7 @@ const Home: NextPage = () => {
   );
 };
 
-Home.getLayout = function getLayout(page: typeof Home, router: Router) {
+Home.getLayout = function getLayout(page: ReactElement, router: Router) {
   return <Layout router={router}>{page}</Layout>;
 };
 
