@@ -15,17 +15,17 @@ export interface HeaderDataType {
 [];
 
 export const HeaderData = [
-  {
-    href: "resume",
-    text: "Resume",
-  },
+  // {
+  //   href: "resume",
+  //   text: "Resume",
+  // },
   {
     href: "projects",
     text: "Projects",
   },
   {
     // add github
-    href: "/",
+    href: "https://github.com/Tomo5524/Portofolio",
     text: "source",
   },
 ];
