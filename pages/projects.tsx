@@ -31,6 +31,12 @@ const Projects: NextPage = () => {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
+        {/* when user enters URL, avoid flickering */}
+        <link
+          rel="preload"
+          href="/images/modern-futuristic-sci-fi-background.jpg"
+          as="image"
+        ></link>
       </Head>
       <main>
         <ProjectPage />
