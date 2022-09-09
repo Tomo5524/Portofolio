@@ -8,12 +8,23 @@ export const CarouselSection = styled.section`
   bottom: 0;
   left: 0;
   right: 0;
-  top: 25%;
+  top: 30%;
   margin: auto;
-  ${media.sm} {
-    top: 30%;
-  }
   ${media.md} {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  ${media.lg} {
+    top: 55%;
+    bottom: auto;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  ${media.xl} {
     top: 50%;
     bottom: auto;
     left: 50%;
@@ -40,19 +51,19 @@ export const CarouselContainer = styled.div`
     // transform: translate(-50%, -50%);
   }
   ${media.lg} {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // top: 55%;
+    // left: 50%;
+    // margin-right: -50%;
+    // transform: translate(-50%, -50%);
   }
-  // ${media.xl} {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   margin-right: -50%;
-  //   transform: translate(-50%, -50%);
-  // }
+  ${media.xl} {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   margin-right: -50%;
+    //   transform: translate(-50%, -50%);
+  }
 `;
 
 export const TextDesktopContainer = styled.div`
