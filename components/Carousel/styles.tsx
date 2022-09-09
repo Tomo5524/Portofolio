@@ -145,23 +145,23 @@ export const ItemLinkContainer = styled.div`
   }
 `;
 
-export const InnerContainer = styled.div`
-  display: none;
-  ${media.md} {
-    display: flex;
-    justify-content: center;
-    height: min-content;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    transform: translateY(-20px);
-    cursor: pointer;
-    width: max-content;
-    &:hover {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-`;
+// export const InnerContainer = styled.div`
+//   display: none;
+//   ${media.md} {
+//     display: flex;
+//     justify-content: center;
+//     height: min-content;
+//     opacity: 0;
+//     transition: all 0.5s ease-in-out;
+//     transform: translateY(-20px);
+//     cursor: pointer;
+//     width: max-content;
+//     &:hover {
+//       opacity: 1;
+//       transform: translate(0);
+//     }
+//   }
+// `;
 
 export const ItemLinkMobile = styled.a`
   color: #f0ecdb;
