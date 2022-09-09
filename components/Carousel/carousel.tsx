@@ -24,6 +24,7 @@ import {
   TitleContainer,
   TitleMobile,
 } from "./styles";
+import styles from "./carousel.module.css";
 
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -70,9 +71,10 @@ export default function Carousel() {
               alt="logo"
             /> */}
             <ItemLinkContainer>
-              <InnerContainer>
+              {/* used classname here to avoid hover effect triggered on page reload */}
+              <div className={styles.innerContainer}>
                 <ItemLink href={item.url}>go to project</ItemLink>
-              </InnerContainer>
+              </div>
             </ItemLinkContainer>
           </Item>
           {/* </ImageContainer> */}
