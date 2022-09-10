@@ -87,8 +87,12 @@ export const ThemeButton = styled.button`
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  &:focus-visible {
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  font-size: 7px;
+  // &:focus-visible {
+  //   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  // }
+  &:focus {
+    outline: none;
   }
   &:before {
     content: "";
