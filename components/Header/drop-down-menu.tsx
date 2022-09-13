@@ -37,9 +37,9 @@ export default function DropDownMenu() {
           <Link href="/" passHref>
             <MobileMenuListItem>Home</MobileMenuListItem>
           </Link>
-          <Link href="/resume" passHref>
+          {/* <Link href="/resume" passHref>
             <MobileMenuListItem>Resume</MobileMenuListItem>
-          </Link>
+          </Link> */}
           <Link href="/projects" passHref>
             <MobileMenuListItem>Projects</MobileMenuListItem>
           </Link>
