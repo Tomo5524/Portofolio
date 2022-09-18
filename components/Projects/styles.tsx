@@ -3,20 +3,14 @@ import { media } from "../../theme/breakpoints";
 
 export const ProjectContainer = styled.section`
   background-image: url("/images/modern-futuristic-sci-fi-background.jpg");
+  // avoid flickering on page load
+  background-color: transparent;
   min-height: 100vh;
-  // max-width: 100vw;
   color: #fffffb;
-  // equivalent of
-  // width : 100%;
-  // margin: 0
   background-size: cover;
 
   // for mobile /////////
   background-repeat: round;
-  // background-position: center;
-
-  ${media.lg} {
-  }
 `;
 
 export const HomeLinkContainer = styled.div`
