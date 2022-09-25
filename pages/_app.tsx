@@ -9,8 +9,8 @@ import "../styles/carousel.css";
 import { NextPage } from "next";
 import { ReactElement, ReactNode, useEffect } from "react";
 import { Router } from "next/router";
-import * as gtag from "../lib/gtag";
-import Script from "next/script";
+// import * as gtag from "../lib/gtag";
+// import Script from "next/script";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement, router: Router) => ReactNode;
