@@ -22,22 +22,22 @@ type AppPropsWithLayout = AppProps & {
 
 // pass in router to pass router down to child component
 function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    router.events.on("hashChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-      router.events.off("hashChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  // useEffect(() => {
+  //   const handleRouteChange = (url: URL) => {
+  //     gtag.pageview(url);
+  //   };
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  //   router.events.on("hashChangeComplete", handleRouteChange);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //     router.events.off("hashChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
   // some pages don't have layout (container and header)
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
             });
           `,
         }}
-      />
+      /> */}
       <GlobalStyle />
       <ThemeProvider>
         {/* <Layout router={router}>
