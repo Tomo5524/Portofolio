@@ -22,6 +22,7 @@ const VoxelComputer = () => {
   const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> =
     useRef(null);
   const handleWindowResize = useCallback(() => {
+    console.log("hiya");
     const { current: renderer } = refRenderer;
     const { current: container } = refContainer;
     if (container && renderer) {
