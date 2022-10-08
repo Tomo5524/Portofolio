@@ -73,6 +73,7 @@ export const HeaderItem = styled.a`
 `;
 
 export const ThemeButton = styled.button`
+  -webkit-tap-highlight-color: transparent;
   user-select: none;
   position: relative;
   white-space: nowrap;
@@ -127,9 +128,12 @@ export const ThemeButton = styled.button`
   &:active:after {
     background: transparent;
   }
-  &:hover:before {
-    opacity: 1;
+  ${media.lg} {
+    &:hover:before {
+      opacity: 1;
+    }
   }
+
   &:after {
     z-index: -1;
     content: "";
@@ -266,6 +270,7 @@ export const MenuButtonWrapper = styled.label`
 `;
 
 export const MenuButton = styled.input`
+  -webkit-tap-highlight-color: transparent;
   &:checked ~ .item-list {
     transform: translateX(-50%) scale(1);
     border-radius: 10px;

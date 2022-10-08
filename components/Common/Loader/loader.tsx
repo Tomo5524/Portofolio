@@ -1,4 +1,4 @@
-import { Container, InnerContainer } from "./styles";
+import { Container, InnerContainer, LoadingText } from "./styles";
 
 export default function Loading() {
   return (
@@ -12,6 +12,7 @@ export default function Loading() {
         <div className="lightsaber ls-left ls-green"></div>
         <div className="lightsaber ls-right ls-red"></div>
       </InnerContainer>
+      <LoadingText>Loading...</LoadingText>
     </Container>
   );
 }
