@@ -31,15 +31,20 @@ export const ButtonContainer = styled.div`
 `;
 
 export const LogoContainer = styled.div`
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   align-items: end;
   svg {
     transition: 200ms ease;
   }
-  &:hover svg {
+  &:active svg {
     transform: rotate(20deg);
   }
-}
+  ${media.lg} {
+    &:hover svg {
+      transform: rotate(20deg);
+    }
+  }
 `;
 
 export const HeaderMenuContainer = styled.ul`
