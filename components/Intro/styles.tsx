@@ -42,9 +42,14 @@ export const Title = styled.div`
 `;
 
 export const ProjectLink = styled.a`
+  -webkit-tap-highlight-color: transparent;
   display: block;
   margin-top: 20px;
-  ${media.md} {
+  border-bottom: ${(props) =>
+    props.color === "light" ? "4px solid #363537" : "4px solid #9a9a9a"};
+  padding-bottom: 6px;
+
+  ${media.lg} {
     margin-top: 0;
     text-align: center;
     --c: #495049; /* the color */
@@ -93,9 +98,6 @@ export const ProjectLink = styled.a`
         0% 100%
       );
     }
-    // span {
-    //   color: ${(props) => (props.color === "light" ? "#363537" : "#f7f6ee")};
-    // }
   }
 `;
 
