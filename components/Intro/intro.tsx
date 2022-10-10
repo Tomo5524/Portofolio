@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { IntroContainer, ProjectLink, Title } from "./styles";
+import { IntroContainer, ProjectLink } from "./styles";
 
 export default function Intro() {
   const { theme } = useTheme();
