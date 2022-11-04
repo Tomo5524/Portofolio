@@ -2,18 +2,17 @@ import styled from "styled-components";
 import { media } from "../../../theme/breakpoints";
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  flex-direction: column;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 `;
 
 export const InnerContainer = styled.div`
   position: relative;
   width: 80px;
   height: 40px;
+  margin: 0 auto;
 `;
 
 export const LoadingText = styled.h2`
