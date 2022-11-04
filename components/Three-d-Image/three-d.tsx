@@ -19,8 +19,9 @@ function easeOutCirc(x: number) {
 const VoxelComputer = () => {
   const refContainer: RefObject<HTMLDivElement> = useRef(null);
   const [loading, setLoading] = useState(true);
-  const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> =
-    useRef(null);
+  const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> = useRef(
+    null
+  );
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
     const { current: container } = refContainer;
@@ -96,7 +97,7 @@ const VoxelComputer = () => {
           const p = initialCameraPosition;
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
-          camera.position.y = 10;
+          camera.position.y = 13;
           camera.position.x =
             p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
           camera.position.z =
