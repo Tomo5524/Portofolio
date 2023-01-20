@@ -5,14 +5,12 @@ interface colorProps {
   readonly colorVariant: string;
 }
 
-export const StackContainer = styled.section`
-  padding-bottom: 64px;
-`;
+export const StackContainer = styled.section``;
 
 const carouselCss = css`
   width: 100%;
   height: 100%;
-  overflow: visible;
+  overflow-x: visible;
   position: absolute;
   transform: translateZ(-288px);
   transform-style: preserve-3d;
@@ -30,10 +28,13 @@ export const StackWrapper = styled.div`
 `;
 
 export const Scene = styled.div`
-  width: 260px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
   perspective: 1000px;
   position: relative;
+  // ${media.md} {
+  //   width: 200px;
+  // }
 `;
 
 export const KeenSlider = styled.div`
@@ -42,29 +43,24 @@ export const KeenSlider = styled.div`
 
 export const TechCard = styled.div<colorProps>`
   height: 100%;
-  // background: ${(props) =>
-    props.colorVariant === "dark"
-      ? "rgba(255, 255, 255, 0.25)"
-      : "rgba(255, 255, 255, 0.1)"};
-
   text-align: center;
 `;
 
-export const TechStack = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  ${media.md} {
-    flex-direction: row;
-    align-items: center;
-  }
-  ${media.lg} {
-    padding: 16px;
-  }
-`;
+// export const TechStack = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: left;
+//   padding-left: 16px;
+//   padding-top: 8px;
+//   padding-bottom: 8px;
+//   ${media.md} {
+//     flex-direction: row;
+//     align-items: center;
+//   }
+//   ${media.lg} {
+//     padding: 16px;
+//   }
+// `;
 
 export const TechStackTitle = styled.p`
   font-size: 20px;
