@@ -1,10 +1,15 @@
 .carouselCell {
   position: absolute;
   width: 200px;
-  left: 10px;
   height: 200px;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
+
+/* @media only screen and (min-width: 768px) {
+  .carouselCell {
+    width: 200px;
+  }
+} */
 
 .numberSlide0 {
   background: #12c2e9; /* fallback for old browsers */
