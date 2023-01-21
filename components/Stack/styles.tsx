@@ -5,7 +5,9 @@ interface colorProps {
   readonly colorVariant: string;
 }
 
-export const StackContainer = styled.section``;
+export const StackContainer = styled.section`
+  padding-bottom: 32px;
+`;
 
 const carouselCss = css`
   width: 100%;
@@ -25,16 +27,19 @@ export const Title = styled.div`
 export const StackWrapper = styled.div`
   display: flex;
   justify-content: center;
+  position: relative;
+  overflow-x: hidden;
 `;
 
 export const Scene = styled.div`
   width: 200px;
-  height: 250px;
-  perspective: 1000px;
+  height: 200px;
+  // perspective: 1000px;
+  perspective: 200px;
   position: relative;
-  // ${media.md} {
-  //   width: 200px;
-  // }
+  ${media.md} {
+    perspective: 1000px;
+  }
 `;
 
 export const KeenSlider = styled.div`
