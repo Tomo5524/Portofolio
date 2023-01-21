@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
 
 export const CredentialsContainer = styled.section`
@@ -11,24 +11,67 @@ export const CredentialsContainer = styled.section`
 export const SNSInfo = styled.div`
   display: flex;
   align-items: center;
+  a,
+  svg {
+    display: block;
+    height: 48px;
+    width: 48px;
+  }
+  padding: 24px 0;
+  ${media.md} {
+    svg {
+      display: block;
+      height: 64px;
+      width: 64px;
+    }
+  }
+`;
+
+const SNSButtonHover = css`
+  border-radius: 100%;
+  transform: scale(1.25);
+  transition: background-color 0.5s, transform 0.5s;
+  svg {
+    fill: black;
+  }
+`;
+
+const NoBlueHighlight = css`
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &:focus {
+    outline: none !important;
+  }
 `;
 
 export const SNSButton = styled.button`
-  padding: 6px 8px;
+  padding: 0;
   border-radius: 10px;
-  background: transparent;
   cursor: pointer;
   margin-right: 24px;
-  transition: background 0.2s ease-in;
-  // color: ${(props) => (props.color === "light" ? "#2c7a7b" : "#ffffff")};
-  // border: ${(props) =>
-    props.color === "light" ? "1px solid #81E6D9" : "1px solid #2c7a7b"};
-  // border: 1px solid #2c7a7b;
-  ${media.lg} {
+  border: none;
+  ${NoBlueHighlight}
+  &:nth-child(1) {
+    svg {
+      fill: #26d991;
+    }
     &:hover {
-      background: ${(props) =>
-        props.color === "light" ? "#E6FFFA" : "#4FD1C5"};
-      // background: #e6fffa;
+      background: #26d991;
+      ${SNSButtonHover}
+    }
+  }
+  &:nth-child(2) {
+    svg {
+      fill: #2691d9;
+    }
+    &:hover {
+      background: #2691d9;
+      ${SNSButtonHover}
     }
   }
 `;
@@ -146,5 +189,3 @@ export const ResumeLinkText = styled.span`
     transition: all 0.25s ease;
   }
 `;
-
-//   props.color === "light" ? "solid #0000" : "solid #9a9a9a"};

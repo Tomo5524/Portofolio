@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import {
-  CredentialsContainer,
-  SNSButton,
-  ResumeLink,
-  ResumeLinkText,
-  SNSInfo,
-} from "./styles";
+import { CredentialsContainer, SNSButton, SNSInfo } from "./styles";
+import { SNSLinks } from "./data";
 
 export default function Credentials() {
   const { theme } = useTheme();
@@ -21,7 +16,20 @@ export default function Credentials() {
             <ResumeLinkText color={theme}></ResumeLinkText>Resume
           </ResumeLink>
         </Link> */}
-        <Link href="https://github.com/Tomo5524" passHref>
+        {SNSLinks.map((item, index) => {
+          return (
+            <Link href={item.url} passHref key={index}>
+              <SNSButton>{item.svg()}</SNSButton>
+            </Link>
+          );
+        })}
+      </SNSInfo>
+    </CredentialsContainer>
+  );
+}
+
+{
+  /* <Link href="https://github.com/Tomo5524" passHref>
           <a>
             <SNSButton color={theme}>
               <svg
@@ -61,8 +69,5 @@ export default function Credentials() {
               </svg>
             </SNSButton>
           </a>
-        </Link>
-      </SNSInfo>
-    </CredentialsContainer>
-  );
+        </Link> */
 }
