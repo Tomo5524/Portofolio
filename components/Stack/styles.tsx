@@ -1,41 +1,90 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
 
+interface colorProps {
+  readonly colorVariant: string;
+}
+
 export const StackContainer = styled.section`
-  // background: ${(props) =>
-    props.color === "light"
-      ? "rgba(255, 255, 255, 0.25)"
-      : "rgba(255, 255, 255, 0.1)"};
-
-  // ${media.lg} {
-  //   margin-top: 24px;
-  //   padding: 16px;
-  // }
+  padding-bottom: 32px;
 `;
 
-export const TechStack = styled.div`
+const carouselCss = css`
+  width: 100%;
+  height: 100%;
+  overflow-x: visible;
+  position: absolute;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+`;
+
+export const Title = styled.div`
+  margin: 10px 0 40px 0;
+  width: -moz-fit-content;
+  width: fit-content;
+`;
+
+export const StackWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+`;
+
+export const Scene = styled.div`
+  width: 200px;
+  height: 250px;
+  // perspective: 1000px;
+  perspective: 240px;
+  position: relative;
+  padding-top: 24px;
   ${media.md} {
-    flex-direction: row;
-    align-items: center;
-  }
-  ${media.lg} {
-    padding: 16px;
+    padding-top: 0;
+    perspective: 1000px;
   }
 `;
+
+export const KeenSlider = styled.div`
+  ${carouselCss}
+`;
+
+export const TechCard = styled.div<colorProps>`
+  height: 100%;
+  text-align: center;
+`;
+
+// export const TechStack = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: left;
+//   padding-left: 16px;
+//   padding-top: 8px;
+//   padding-bottom: 8px;
+//   ${media.md} {
+//     flex-direction: row;
+//     align-items: center;
+//   }
+//   ${media.lg} {
+//     padding: 16px;
+//   }
+// `;
 
 export const TechStackTitle = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   margin: 0;
-  padding-right: 16px;
+  padding-top: 24px;
+`;
+
+export const TechStackItemList = styled.ul`
+  padding-top: 16px;
+  margin: 0;
+`;
+
+export const TechStackItem = styled.li`
+  font-size: 16px;
+  font-weight: 700;
   padding-bottom: 8px;
-  ${media.md} {
-    padding-bottom: 0;
-  }
+  text-align: left;
+  padding-left: 8px;
 `;
