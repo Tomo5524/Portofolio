@@ -38,7 +38,7 @@ export default function Header({ path }: HeaderProps) {
             return (
               <li key={idx}>
                 <Link href={item.href} passHref>
-                  <HeaderItem color={theme}>{item.text}</HeaderItem>
+                  <HeaderItem systemTheme={theme!}>{item.text}</HeaderItem>
                 </Link>
               </li>
             );
