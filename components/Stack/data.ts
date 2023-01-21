@@ -24,7 +24,7 @@ export const stackList = [
     items: ["Nodejs", "Express"],
   },
   {
-    title: "OS",
+    title: "Database",
     items: ["MongoDB", "PostgreSQL"],
   },
   {
