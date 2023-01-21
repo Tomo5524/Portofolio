@@ -5,10 +5,10 @@ import { IntroContainer, ProjectLink, Title } from "./styles";
 export default function Intro() {
   const { theme } = useTheme();
   return (
-    <IntroContainer color={theme}>
+    <IntroContainer systemTheme={theme!}>
       <h2>Building Web applications with latest technologies</h2>
       <Link href="/projects" passHref>
-        <ProjectLink color={theme}>
+        <ProjectLink systemTheme={theme!}>
           <span>View projects</span>
         </ProjectLink>
       </Link>

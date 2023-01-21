@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { media } from "../../theme/breakpoints";
 
+interface widthProps {
+  readonly widthValue: number | undefined;
+}
+
 export const CarouselSection = styled.section`
   position: absolute;
   // inset: 0;
@@ -101,8 +105,8 @@ export const TextMobileContainer = styled.div`
   }
 `;
 
-export const Item = styled.div`
-  width: ${(props) => props.results};
+export const Item = styled.div<widthProps>`
+  width: ${(props) => props.widthValue};
   // width: 100%;
   min-height: 200px;
   // height: 100%;

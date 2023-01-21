@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { media } from "../../theme/breakpoints";
+import { SystemThemeProps } from "../Common/types";
 
 export const HeaderContainer = styled.nav`
   width: 100%;
@@ -63,16 +64,11 @@ export const HeaderMenuContainer = styled.ul`
   }
 `;
 
-// export const HeaderList = styled.li`
-//   text-decoration: none;
-//   padding-left: 24px;
-// `;
-
-export const HeaderItem = styled.a`
+export const HeaderItem = styled.a<SystemThemeProps>`
   text-decoration: none;
   padding-bottom: 4px;
   ${(props) =>
-    props.color === "light"
+    props.systemTheme === "light"
       ? " &:hover {border-bottom : 2px solid #363537}"
       : " &:hover {border-bottom: 2px solid #fffffb}"}
 `;
@@ -303,14 +299,6 @@ export const MenuButton = styled.input`
 export const HamburgerInput = styled.input``;
 
 export const HamburgerSpan = styled.span``;
-
-// ${(props) => {
-//   if (props.itemProp === "first") {
-//     return "width: 50%";
-//   } else if (props.itemProp === "third") {
-//     return "margin-left: 50%: transform-origin: left'";
-//   }
-// }}
 
 export const ItemList = styled.div``;
 

@@ -48,7 +48,7 @@ export default function Carousel() {
         <div className={`keen-slider__slide number-slide${index}`} key={index}>
           <ItemTitle>{item.title}</ItemTitle>
           {/* <ImageContainer> */}
-          <Item results={currentWidth}>
+          <Item widthValue={currentWidth}>
             <Image
               src={item.imgURL}
               layout="fill"

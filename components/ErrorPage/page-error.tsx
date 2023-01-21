@@ -14,7 +14,7 @@ export default function ErrorPage() {
       <ImageContainer>
         <Link href="/" passHref>
           <a>
-            <ImageInnerContainer itemProp="pointer">
+            <ImageInnerContainer isPointer={true}>
               <Image
                 src="/images/404Error/backToTheHomepage.webp"
                 alt="Back to the Homepage"
@@ -25,7 +25,6 @@ export default function ErrorPage() {
             </ImageInnerContainer>
           </a>
         </Link>
-
         <ImageInnerContainer>
           <Image
             src="/images/404Error/Delorean.webp"
