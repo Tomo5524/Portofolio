@@ -19,7 +19,7 @@ const carouselCss = css`
 `;
 
 export const Title = styled.div`
-  margin: 10px 0 64px 0;
+  margin: 10px 0 40px 0;
   width: -moz-fit-content;
   width: fit-content;
 `;
@@ -28,16 +28,18 @@ export const StackWrapper = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 export const Scene = styled.div`
   width: 200px;
-  height: 200px;
+  height: 250px;
   // perspective: 1000px;
-  perspective: 200px;
+  perspective: 240px;
   position: relative;
+  padding-top: 24px;
   ${media.md} {
+    padding-top: 0;
     perspective: 1000px;
   }
 `;
