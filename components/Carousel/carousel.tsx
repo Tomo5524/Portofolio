@@ -80,7 +80,7 @@ export default function Carousel() {
         </div>
       );
     });
-  }, [CarouselItems, currentWidth]);
+  }, [currentWidth]);
 
   return (
     <CarouselSection>
