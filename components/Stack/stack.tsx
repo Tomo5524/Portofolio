@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 import { useTheme } from "next-themes";
 import {
+  CarouselCell,
   KeenSlider,
   Scene,
   StackContainer,
   StackWrapper,
   TechCard,
-  // StackContainer,
   TechStackItem,
   TechStackItemList,
   TechStackTitle,
@@ -14,7 +14,6 @@ import {
 } from "./styles";
 import { TitleText } from "../Work/styles";
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react";
-import styles from "./stack-carousel.module.css";
 import { stackList } from "./data";
 
 const carousel: KeenSliderPlugin = (slider) => {
@@ -39,7 +38,7 @@ export default function Stack() {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
-      selector: `.${styles.carouselCell}`,
+      selector: `.${CarouselCell.styledComponentId}`,
       renderMode: "custom",
       // mode: "free-snap",
     },
@@ -48,12 +47,9 @@ export default function Stack() {
 
   const displayedItems = useMemo(() => {
     return stackList.map((item, index) => {
-      const slideClassName = `numberSlide${index}`;
+      // const slideClassName = `numberSlide${index}`;
       return (
-        <div
-          className={`${styles.carouselCell} ${styles[slideClassName]}`}
-          key={item.title}
-        >
+        <CarouselCell key={item.title}>
           <TechCard colorVariant={theme!}>
             <TechStackTitle>{item.title}</TechStackTitle>
             <TechStackItemList>
@@ -62,7 +58,7 @@ export default function Stack() {
               })}
             </TechStackItemList>
           </TechCard>
-        </div>
+        </CarouselCell>
       );
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
