@@ -13,7 +13,6 @@ import {
   Title,
 } from "./styles";
 import { TitleText } from "../Work/styles";
-// import "./styles.css"
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react";
 import styles from "./stack-carousel.module.css";
 import { stackList } from "./data";
@@ -66,7 +65,8 @@ export default function Stack() {
         </div>
       );
     });
-  }, [theme]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <StackContainer>
