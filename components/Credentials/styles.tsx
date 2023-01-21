@@ -17,13 +17,14 @@ export const SNSInfo = styled.div`
     height: 48px;
     width: 48px;
   }
-  padding: 24px 0;
+  padding: 8px 0;
   ${media.md} {
     svg {
       display: block;
       height: 64px;
       width: 64px;
     }
+    padding: 24px 0;
   }
 `;
 
