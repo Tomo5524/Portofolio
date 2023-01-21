@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { CredentialsContainer, SNSButton, SNSInfo } from "./styles";
 import { SNSLinks } from "./data";
+import { useTheme } from "next-themes";
 
 export default function Credentials() {
-  // const { theme } = useTheme();
+  const { theme } = useTheme();
   return (
     <CredentialsContainer>
       <h1>Tomo Takebuchi</h1>
@@ -18,7 +19,7 @@ export default function Credentials() {
         {SNSLinks.map((item, index) => {
           return (
             <Link href={item.url} passHref key={index}>
-              <SNSButton>{item.svg()}</SNSButton>
+              <SNSButton systemTheme={theme!}>{item.svg()}</SNSButton>
             </Link>
           );
         })}

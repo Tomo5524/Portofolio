@@ -1,14 +1,8 @@
 import styled from "styled-components";
 import { media } from "../../theme/breakpoints";
-// interface IntroContainer {
-//   color: boolean;
-// }
+import { SystemThemeProps } from "../Common/types";
 
-// export const IntroContainer = styled.section<IntroContainer>`
-//   background: ${() => (color ? "#f7f6ee" : "#495049")};
-// `;
-
-export const IntroContainer = styled.section`
+export const IntroContainer = styled.section<SystemThemeProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +11,7 @@ export const IntroContainer = styled.section`
   padding: 16px;
   text-align: center;
   background: ${(props) =>
-    props.color === "light"
+    props.systemTheme === "light"
       ? "rgba(255, 255, 255, 0.25)"
       : "rgba(255, 255, 255, 0.1)"};
   z-index: 1;
@@ -41,12 +35,12 @@ export const Title = styled.div`
   font-weight: bold;
 `;
 
-export const ProjectLink = styled.a`
+export const ProjectLink = styled.a<SystemThemeProps>`
   -webkit-tap-highlight-color: transparent;
   display: block;
   margin-top: 20px;
   border-bottom: ${(props) =>
-    props.color === "light" ? "4px solid #363537" : "4px solid #9a9a9a"};
+    props.systemTheme === "light" ? "4px solid #363537" : "4px solid #9a9a9a"};
   padding-bottom: 6px;
 
   ${media.lg} {
@@ -61,7 +55,7 @@ export const ProjectLink = styled.a`
       border: 1px solid rgba(66, 153, 225, 0.6);
     }
     border: ${(props) =>
-      props.color === "light" ? "solid #0000" : "solid #9a9a9a"};
+      props.systemTheme === "light" ? "solid #0000" : "solid #9a9a9a"};
     padding: 4px;
     border-width: var(--b) var(--b) var(--_s) var(--_s);
     background: conic-gradient(
@@ -100,10 +94,3 @@ export const ProjectLink = styled.a`
     }
   }
 `;
-
-// export const MobileProjectLink = styled.a`
-//   display: block;
-//   ${media.md} {
-//     display: none;
-//   }
-// `;

@@ -1,10 +1,6 @@
 import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
 
-interface colorProps {
-  readonly colorVariant: string;
-}
-
 export const StackContainer = styled.section`
   padding-bottom: 32px;
 `;
@@ -48,7 +44,7 @@ export const KeenSlider = styled.div`
   ${carouselCss}
 `;
 
-export const TechCard = styled.div<colorProps>`
+export const TechCard = styled.div`
   height: 100%;
   text-align: center;
 `;

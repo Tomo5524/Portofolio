@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { media } from "../../theme/breakpoints";
 
+interface isPointerProps {
+  readonly isPointer?: boolean;
+}
+
 export const ErrorPageContainer = styled.section`
   display: flex;
   justify-content: center;
@@ -15,10 +19,11 @@ export const ErrorPageContainer = styled.section`
   }
 `;
 
-export const ImageInnerContainer = styled.div`
+export const ImageInnerContainer = styled.div<isPointerProps>`
   width: 100%;
   height: 100%;
   position: relative;
+  ${(props) => props.isPointer && "cursor:pointer"}
 `;
 
 export const ImageContainer = styled.div`
@@ -27,7 +32,7 @@ export const ImageContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  ${(props) => props.itemProp === "pointer" && " cursor:pointer"}
+
   a {
     height: 100%;
   }
