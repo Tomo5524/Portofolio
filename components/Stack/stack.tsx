@@ -49,7 +49,7 @@ export default function Stack() {
     return stackList.map((item) => {
       return (
         <CarouselCell key={item.title}>
-          <TechCard colorVariant={theme!}>
+          <TechCard>
             <TechStackTitle>{item.title}</TechStackTitle>
             <TechStackItemList>
               {item.items.map((value) => {

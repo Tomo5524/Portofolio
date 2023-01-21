@@ -1,12 +1,8 @@
 import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
+import { SystemThemeProps } from "../Common/types";
 
-export const CredentialsContainer = styled.section`
-  // ${media.lg} {
-  //   margin-top: 24px;
-  //   padding: 16px;
-  // }
-`;
+export const CredentialsContainer = styled.section``;
 
 export const SNSInfo = styled.div`
   display: flex;
@@ -50,13 +46,17 @@ const NoBlueHighlight = css`
   }
 `;
 
-export const SNSButton = styled.button`
+export const SNSButton = styled.button<SystemThemeProps>`
   padding: 0;
   border-radius: 10px;
   cursor: pointer;
   margin-right: 24px;
   border: none;
   ${NoBlueHighlight}
+  background: ${(props) =>
+    props.systemTheme === "light"
+      ? "rgba(255, 255, 255, 0.55)"
+      : "rgba(255, 255, 255, 0.1)"};
   &:nth-child(1) {
     svg {
       fill: #26d991;
