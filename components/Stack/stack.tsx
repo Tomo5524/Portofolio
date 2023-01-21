@@ -46,8 +46,7 @@ export default function Stack() {
   );
 
   const displayedItems = useMemo(() => {
-    return stackList.map((item, index) => {
-      // const slideClassName = `numberSlide${index}`;
+    return stackList.map((item) => {
       return (
         <CarouselCell key={item.title}>
           <TechCard colorVariant={theme!}>
