@@ -19,9 +19,8 @@ function easeOutCirc(x: number) {
 const VoxelComputer = () => {
   const refContainer: RefObject<HTMLDivElement> = useRef(null);
   const [loading, setLoading] = useState(true);
-  const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> = useRef(
-    null
-  );
+  const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> =
+    useRef(null);
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
     const { current: container } = refContainer;
@@ -129,6 +128,8 @@ const VoxelComputer = () => {
     <LoadingContainer ref={refContainer}>
       {loading && <Loading />}
     </LoadingContainer>
+    // for debugging loading state
+    // <Loading />
   );
 };
 
