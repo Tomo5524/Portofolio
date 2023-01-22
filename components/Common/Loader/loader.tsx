@@ -1,16 +1,31 @@
-import { Container, InnerContainer, LoadingText } from "./styles";
+import { useTheme } from "next-themes";
+import { useMemo } from "react";
+import {
+  Container,
+  InnerContainer,
+  Lightsaber,
+  LoadingText,
+  LsParticles,
+} from "./styles";
+
+const numOfParticles = 5;
 
 export default function Loading() {
+  const { theme } = useTheme();
+  const displayParticles = () => {
+    let particles = [];
+    for (let i = 0; i < numOfParticles; i++) {
+      particles.push(<LsParticles systemTheme={theme!} />);
+    }
+    return particles;
+  };
+
   return (
     <Container>
       <InnerContainer>
-        <div className="ls-particles ls-part-1"></div>
-        <div className="ls-particles ls-part-2"></div>
-        <div className="ls-particles ls-part-3"></div>
-        <div className="ls-particles ls-part-4"></div>
-        <div className="ls-particles ls-part-5"></div>
-        <div className="lightsaber ls-left ls-green"></div>
-        <div className="lightsaber ls-right ls-red"></div>
+        {displayParticles()}
+        <Lightsaber lisghtSaberColor="green" lisghtSaberPosition="left" />
+        <Lightsaber lisghtSaberColor="red" lisghtSaberPosition="right" />
       </InnerContainer>
       <LoadingText>Loading...</LoadingText>
     </Container>

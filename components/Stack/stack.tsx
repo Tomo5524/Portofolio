@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useTheme } from "next-themes";
 import {
   CarouselCell,
   KeenSlider,
@@ -34,7 +33,6 @@ const carousel: KeenSliderPlugin = (slider) => {
 };
 
 export default function Stack() {
-  const { theme } = useTheme();
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
