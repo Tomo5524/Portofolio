@@ -4,7 +4,6 @@ import Layout from "../components/Layout/layout";
 import { GlobalStyle } from "../theme/GlobalStyle";
 import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
-import "../styles/loader.css";
 import "../styles/carousel.css";
 import { NextPage } from "next";
 import { ReactElement, ReactNode, useEffect } from "react";
