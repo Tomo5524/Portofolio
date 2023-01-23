@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useKeenSlider } from "keen-slider/react";
 import { CarouselItems } from "./data";
 import {
+  ArrowSVG,
   CarouselContainer,
   CarouselSection,
   Item,
@@ -12,6 +13,7 @@ import {
   ItemLinkMobile,
   ItemStack,
   ItemTitle,
+  NavigationWrapper,
   TextDesktopContainer,
   TextMobileContainer,
   TitleMobile,
@@ -65,7 +67,7 @@ export default function Carousel() {
             <ItemLinkContainer>
               {/* used classname here to avoid hover effect triggered on page reload */}
               <div className={styles.innerContainer}>
-                <ItemLink href={item.url}>go to project</ItemLink>
+                <ItemLink href={item.url}>Go to project</ItemLink>
               </div>
             </ItemLinkContainer>
           </Item>
@@ -86,7 +88,7 @@ export default function Carousel() {
     <CarouselSection>
       <TitleMobile>{CarouselItems[currentSlide].title}</TitleMobile>
       <CarouselContainer ref={ref}>
-        <div className="navigation-wrapper">
+        <NavigationWrapper>
           <div ref={sliderRef} className="keen-slider">
             {displayedItems}
           </div>
@@ -111,11 +113,11 @@ export default function Carousel() {
               />
             </>
           )}
-        </div>
+        </NavigationWrapper>
       </CarouselContainer>
       <TextMobileContainer>
         <ItemLinkMobile href={CarouselItems[currentSlide].url}>
-          go to project
+          Go to project
         </ItemLinkMobile>
         <ItemDescription>
           {CarouselItems[currentSlide].description}
@@ -134,15 +136,14 @@ function Arrow(props: {
   left?: boolean;
   onClick: (e: any) => void;
 }) {
-  const isDisabled = props.disabled ? " arrow--disabled" : "";
+  // const isDisabled = props.disabled ? " arrow--disabled" : "";
   return (
-    <svg
+    <ArrowSVG
       onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${isDisabled}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
+      isLeft={props.left}
+      isDisabled={props.disabled}
     >
       {props.left && (
         <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
@@ -150,6 +151,6 @@ function Arrow(props: {
       {!props.left && (
         <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
       )}
-    </svg>
+    </ArrowSVG>
   );
 }

@@ -1,8 +1,13 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
 
-interface widthProps {
+interface WidthProps {
   readonly widthValue: number | undefined;
+}
+
+interface ArrowProps {
+  readonly isLeft?: boolean;
+  readonly isDisabled: boolean;
 }
 
 export const CarouselSection = styled.section`
@@ -105,7 +110,7 @@ export const TextMobileContainer = styled.div`
   }
 `;
 
-export const Item = styled.div<widthProps>`
+export const Item = styled.div<WidthProps>`
   width: ${(props) => props.widthValue};
   // width: 100%;
   min-height: 200px;
@@ -126,6 +131,15 @@ export const Item = styled.div<widthProps>`
   ${media.sm} {
     min-height: 250px;
   }
+  ${media.md} {
+    img {
+      object-fit: cover;
+      transition: all 1s ease-in-out;
+    }
+    &:hover img {
+      transform: scale(1.2);
+    }
+  }
   ${media.lg} {
     min-height: 400px;
   }
@@ -143,9 +157,6 @@ export const ItemLinkContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 `;
 
@@ -185,9 +196,7 @@ export const ItemLink = styled.a`
   padding: 14px;
   border-radius: 100px;
   background-color: #000;
-  ${media.lg} {
-    border-radius: 100px;
-  }
+  height: max-content;
 `;
 
 export const TitleMobile = styled.h1`
@@ -241,3 +250,57 @@ export const ItemStack = styled.p`
   ${media.lg} {
   }
 `;
+
+export const ArrowSVG = styled.svg<ArrowProps>`
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+  ${(props) =>
+    props.isLeft
+      ? css`
+          left: -50px;
+        `
+      : css`
+          left: auto;
+          right: -50px;
+        `}
+  ${(props) =>
+    props.isDisabled &&
+    css`
+      fill: rgba(255, 255, 255, 0.5);
+    `}
+    @media screen and (max-width: 487px) {
+    top: 45%;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 45%;
+  }
+`;
+
+export const NavigationWrapper = styled.div`
+  position: relative;
+  text-align: center;
+`;
+
+// export const InnerContainer = styled.div`
+//   display: none;
+//   ${media.md} {
+//     display: flex;
+//     justify-content: center;
+//     height: min-content;
+//     opacity: 0;
+//     transition: all 0.5s ease-in-out;
+//     transform: translateY(20px);
+//     cursor: pointer;
+//     width: max-content;
+//     &:hover {
+//       opacity: 1;
+//       transform: translate(0);
+//     }
+//   }
+// `;
