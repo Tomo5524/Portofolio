@@ -6,15 +6,15 @@ html,
 body {
   padding: 0;
   margin: 0;
+  transition: background 0.5s linear, color 0.5s linear;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a {
   text-decoration: none;
   cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
-}
 `;
 
 // :root {
@@ -26,11 +26,4 @@ a {
 // [data-theme="dark"] {
 //   --background: #2c302c;
 //   --foreground: #fffffb;
-// }
-
-// body {
-//   background-color: var(--background);
-//   color: var(--foreground);
-//   /* transition: background 0.2s ease-in, color 0.2s ease-in; */
-//   transition: background 0.5s linear, color 0.5s linear;
 // }
