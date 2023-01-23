@@ -2,6 +2,7 @@
 
 * {
   font-family: "Montserrat";
+  box-sizing: border-box;
 }
 
 :root {
@@ -18,9 +19,6 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   /* transition: all 0.2s linear; */
-  transition: background 0.5s linear, color 0.5s linear;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 a {
   color: var(--foreground);
@@ -29,28 +27,6 @@ a {
 button {
   transition: background 0.5s linear;
 }
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  transition: background 0.2s ease-in, color 0.2s ease-in;
-  -webkit-font-smoothing: auto;
-  -webkit-transition: background-color 1000ms linear;
-  -ms-transition: background-color 1000ms linear;
-  transition: background-color 1000ms linear;
-}
-
-
-
-a {
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-} */
 
 /* @media (prefers-color-scheme: dark) {
   html {
