@@ -1,3 +1,4 @@
+// https://stackoverflow.com/a/73556843/15156010
 const customMediaQuery = (minWidth: number) =>
   `@media (min-width: ${minWidth}px)`;
 
