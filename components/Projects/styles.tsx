@@ -22,6 +22,10 @@ export const HomeLinkContainer = styled.div`
     padding-top: 50px;
     padding-bottom: 40px;
   }
+  ${media.lg} and (max-height: 566px) {
+    padding: 40px 24px 40px 24px;
+    width: 40%;
+  }
 `;
 
 export const HomeLink = styled.a`
@@ -84,6 +88,7 @@ export const HomeLink = styled.a`
       }
     }
   }
+ 
 `;
 
 export const HomeLinkText = styled.span`
