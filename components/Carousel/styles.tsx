@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
 
-interface WidthProps {
-  readonly widthValue: number | undefined;
-}
+// interface WidthProps {
+//   readonly widthValue: number | undefined;
+// }
 
 interface ArrowProps {
   readonly isLeft?: boolean;
@@ -110,11 +110,9 @@ export const TextMobileContainer = styled.div`
   }
 `;
 
-export const Item = styled.div<WidthProps>`
-  width: ${(props) => props.widthValue};
-  // width: 100%;
+// width: ${(props) => props.widthValue}px;
+export const Item = styled.div`
   min-height: 200px;
-  // height: 100%;
   position: relative;
   img {
     // width: 100% !important;
@@ -128,7 +126,8 @@ export const Item = styled.div<WidthProps>`
   // > div {
   //   position: unset !important;
   // }
-  ${media.sm} {
+  // some laptops' screen height is 566px thus having height check prevents errors where back home button overlaps the cards
+  ${media.sm} and (min-height: 567px) {
     min-height: 250px;
   }
   ${media.md} {
@@ -140,7 +139,7 @@ export const Item = styled.div<WidthProps>`
       transform: scale(1.2);
     }
   }
-  ${media.lg} {
+  ${media.lg} and (min-height: 567px) {
     min-height: 400px;
   }
 `;
