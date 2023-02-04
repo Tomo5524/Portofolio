@@ -24,7 +24,6 @@ export default function Carousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const ref: RefObject<HTMLDivElement> = useRef(null);
-  const [currentWidth, setCurrentWidth] = useState<number | undefined>(0);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     slides: {
       spacing: 16,
@@ -38,19 +37,13 @@ export default function Carousel() {
     },
   });
 
-  useEffect(() => {
-    if (ref.current !== null) {
-      setCurrentWidth(ref.current.clientWidth);
-    }
-  }, []);
-
   const displayedItems = useMemo(() => {
     return CarouselItems.map((item, index) => {
       return (
         <div className={`keen-slider__slide number-slide${index}`} key={index}>
           <ItemTitle>{item.title}</ItemTitle>
           {/* <ImageContainer> */}
-          <Item widthValue={currentWidth}>
+          <Item>
             <Image
               src={item.imgURL}
               layout="fill"
@@ -82,7 +75,7 @@ export default function Carousel() {
         </div>
       );
     });
-  }, [currentWidth]);
+  }, []);
 
   return (
     <CarouselSection>
