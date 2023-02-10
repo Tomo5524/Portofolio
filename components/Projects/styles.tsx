@@ -22,7 +22,8 @@ export const HomeLinkContainer = styled.div`
     padding-top: 50px;
     padding-bottom: 40px;
   }
-  ${media.lg} and (max-height: 566px) {
+  // on windows laptop, home button will be placed on left side
+  ${media.lg} and (max-height: 760px) {
     padding: 40px 24px 40px 24px;
     width: 40%;
   }
