@@ -1,5 +1,6 @@
 import { Router } from "next/router";
 import React, { useEffect, useState } from "react";
+import { LoadingContextProvider } from "../../context/loading-context";
 import Header from "../Header/header";
 import { Container } from "./styles";
 // import Footer from "./footer";
@@ -28,12 +29,14 @@ export default function Layout({
   return (
     <>
       {/* asPath: String - The path as shown in the browser including the search params and respecting the trailingSlash configuration. basePath and locale are not included. */}
-      <Header path={router.asPath} />
-      <Container>
-        {/* <Three_D_Component /> */}
-        {children}
-      </Container>
-      {/* <Footer /> */}
+      <LoadingContextProvider>
+        <Header path={router.asPath} />
+        <Container>
+          {/* <Three_D_Component /> */}
+          {children}
+        </Container>
+        {/* <Footer /> */}
+      </LoadingContextProvider>
     </>
   );
 }
