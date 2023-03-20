@@ -60,6 +60,7 @@ function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
         </Layout> */}
         {getLayout(<Component {...pageProps} />, router)}
       </ThemeProvider>
+      <Analytics />
     </>
   );
 }
