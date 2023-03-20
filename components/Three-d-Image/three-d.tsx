@@ -1,5 +1,4 @@
 import {
-  useState,
   useEffect,
   useRef,
   useCallback,
@@ -8,6 +7,7 @@ import {
 } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { useLoadingContext } from "../../context/loading-context";
 import Loading from "../Common/Loader/loader";
 import { loadGLTFModel } from "../lib/model";
 import { LoadingContainer } from "./three-d-loader";
@@ -16,9 +16,10 @@ function easeOutCirc(x: number) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-const VoxelComputer = () => {
+export default function VoxelComputer() {
   const refContainer: RefObject<HTMLDivElement> = useRef(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
+  const { loading, setLoading } = useLoadingContext();
   const refRenderer: MutableRefObject<THREE.WebGLRenderer | null> =
     useRef(null);
   const handleWindowResize = useCallback(() => {
@@ -131,6 +132,4 @@ const VoxelComputer = () => {
     // for debugging loading state
     // <Loading />
   );
-};
-
-export default VoxelComputer;
+}

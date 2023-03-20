@@ -15,6 +15,7 @@ import {
 } from "./styles";
 import { LightSaver } from "./light-saber";
 import DropDownMenu from "./drop-down-menu";
+import { useLoadingContext } from "../../context/loading-context";
 
 interface HeaderProps {
   path: string;
@@ -22,6 +23,7 @@ interface HeaderProps {
 
 export default function Header({ path }: HeaderProps) {
   const { theme, setTheme, systemTheme } = useTheme();
+  const { loading } = useLoadingContext();
   return (
     <HeaderContainer>
       <HeaderInnerContainer>
@@ -61,6 +63,7 @@ export default function Header({ path }: HeaderProps) {
                 setTheme(theme === "light" ? "dark" : "light");
               }
             }}
+            disabled={loading}
           >
             {LightSaver()}
           </ThemeButton>
