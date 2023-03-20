@@ -1,12 +1,13 @@
 // import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Layout from "../components/Layout/layout";
+// import Layout from "../components/Layout/layout";
 import { GlobalStyle } from "../theme/GlobalStyle";
 import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
 import { NextPage } from "next";
-import { ReactElement, ReactNode, useEffect } from "react";
+import { ReactElement, ReactNode } from "react";
 import { Router } from "next/router";
+import { Analytics } from "@vercel/analytics/react";
 // import * as gtag from "../lib/gtag";
 // import Script from "next/script";
 
@@ -60,6 +61,7 @@ function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
         </Layout> */}
         {getLayout(<Component {...pageProps} />, router)}
       </ThemeProvider>
+      {/* add Vercel analytics */}
       <Analytics />
     </>
   );
