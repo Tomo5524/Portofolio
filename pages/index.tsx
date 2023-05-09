@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Intro from "../components/Intro/intro";
 import Credentials from "../components/Credentials/credentials";
