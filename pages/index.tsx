@@ -57,11 +57,11 @@ const Home: NextPageWithLayout = () => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         {/* preload background image in project page to avoid flickering issue */}
-        <link
+        {/* <link
           rel="preload"
-          href="/images/modern-futuristic-sci-fi-background.jpg"
+          href="/images/modern-futuristic-sci-fi-background.webp"
           as="image"
-        ></link>
+        ></link> */}
       </Head>
       <main>
         <Suspense fallback={<LightSaberLoader />}>

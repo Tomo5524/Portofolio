@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { media } from "../../theme/breakpoints";
 
 export const ProjectContainer = styled.section`
-  background-image: url("/images/modern-futuristic-sci-fi-background.jpg");
+  background-image: url("/images/modern-futuristic-sci-fi-background.webp");
   // avoid flickering on page load
   background-color: transparent;
   min-height: 100vh;
