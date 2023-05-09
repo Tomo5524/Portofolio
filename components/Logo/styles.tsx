@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LogoBox = styled.span`
+export const LogoBox = styled.a`
   display: inline-flex;
   align-items: center;
   height: 80px;

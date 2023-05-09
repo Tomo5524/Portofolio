@@ -1,5 +1,6 @@
 export const SNSLinks = [
   {
+    name: "github",
     url: "https://github.com/Tomo5524",
     svg: () => {
       return (
@@ -15,6 +16,7 @@ export const SNSLinks = [
     },
   },
   {
+    name: "Linkedin",
     url: "https://www.linkedin.com/in/tomo-takebuchi-501065135/",
     svg: () => {
       return (

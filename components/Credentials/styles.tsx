@@ -2,7 +2,11 @@ import styled, { css } from "styled-components";
 import { media } from "../../theme/breakpoints";
 import { SystemThemeProps } from "../Common/types";
 
-export const CredentialsContainer = styled.section``;
+export const CredentialsContainer = styled.section`
+  h1 {
+    font-size: 28px;
+  }
+`;
 
 export const SNSInfo = styled.div`
   display: flex;
@@ -10,8 +14,8 @@ export const SNSInfo = styled.div`
   a,
   svg {
     display: block;
-    height: 48px;
-    width: 48px;
+    height: 64px;
+    width: 64px;
   }
   padding: 8px 0;
   ${media.md} {
@@ -46,7 +50,7 @@ const NoBlueHighlight = css`
   }
 `;
 
-export const SNSButton = styled.button<SystemThemeProps>`
+export const SNSLink = styled.a<SystemThemeProps>`
   padding: 0;
   border-radius: 10px;
   cursor: pointer;

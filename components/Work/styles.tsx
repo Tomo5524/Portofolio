@@ -19,7 +19,7 @@ export const Title = styled.div`
   width: fit-content;
 `;
 
-export const TitleText = styled.h3`
+export const TitleText = styled.h2`
   border-bottom: 4px solid #525252;
   padding-bottom: 4px;
 `;

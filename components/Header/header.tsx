@@ -27,14 +27,10 @@ export default function Header({ path }: HeaderProps) {
   return (
     <HeaderContainer>
       <HeaderInnerContainer>
-        <Link href="/" passHref scroll={false}>
-          <a>
-            <LogoContainer>
-              <Logo />
-              <h1>T.T</h1>
-            </LogoContainer>
-          </a>
-        </Link>
+        <LogoContainer>
+          <Logo />
+          <h1>T.T</h1>
+        </LogoContainer>
         <HeaderMenuContainer>
           {HeaderData.map((item, idx) => {
             return (

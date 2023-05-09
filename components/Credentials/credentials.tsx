@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CredentialsContainer, SNSButton, SNSInfo } from "./styles";
+import { CredentialsContainer, SNSLink, SNSInfo } from "./styles";
 import { SNSLinks } from "./data";
 import { useTheme } from "next-themes";
 
@@ -18,8 +18,10 @@ export default function Credentials() {
         </Link> */}
         {SNSLinks.map((item, index) => {
           return (
-            <Link href={item.url} passHref key={index}>
-              <SNSButton systemTheme={theme!}>{item.svg()}</SNSButton>
+            <Link href={item.url} passHref key={`${item.name}-${index}`}>
+              <SNSLink systemTheme={theme!} aria-label={item.name}>
+                {item.svg()}
+              </SNSLink>
             </Link>
           );
         })}
