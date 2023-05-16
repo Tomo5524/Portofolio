@@ -1,5 +1,5 @@
 export interface SystemThemeProps {
-  readonly systemTheme: string | undefined;
+  readonly systemTheme: string;
 }
 
 // type SystemThemeTypes = "light" | "dark";
