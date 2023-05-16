@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Grid } from "../Foundations/foundations";
 import Logo from "../Logo/logo";
 import { HeaderData } from "./data";
 // import LightSaver from "./blue-light-saber";
@@ -36,7 +35,11 @@ export default function Header({ path }: HeaderProps) {
             return (
               <li key={idx}>
                 <Link href={item.href} passHref>
-                  <HeaderItem systemTheme={theme!}>{item.text}</HeaderItem>
+                  <HeaderItem
+                    systemTheme={theme! === "system" ? systemTheme : theme!}
+                  >
+                    {item.text}
+                  </HeaderItem>
                 </Link>
               </li>
             );
