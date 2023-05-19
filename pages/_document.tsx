@@ -2,7 +2,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   const description = "Tomo Takebuchi's Portfolio";
-  const ogimage = "https://www.tomotakebuchi.dev/favicon/apple-touch-icon.png";
+  const ogimage =
+    "https://www.tomotakebuchi.dev/images/favicon/apple-touch-icon.png";
   const sitename = "tomotakebuchi.dev";
   const title = "3D Portfolio";
 
