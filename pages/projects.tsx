@@ -2,17 +2,18 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ProjectPage from "../components/Projects/projects";
 import "keen-slider/keen-slider.min.css";
+import { useEffect, useState } from "react";
 
 const Projects: NextPage = () => {
-  // const [mounted, setMounted] = useState(false);
-  // // useEffect only runs on the client, so now we can safely show the UI
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
+  const [mounted, setMounted] = useState(false);
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  // if (!mounted) {
-  //   return null;
-  // }
+  if (!mounted) {
+    return null;
+  }
   return (
     <>
       <Head>
