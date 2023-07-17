@@ -1,5 +1,6 @@
 import { Scene } from "three";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+// import from "three/examples/";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export function loadGLTFModel(
@@ -9,12 +10,12 @@ export function loadGLTFModel(
 ) {
   const { receiveShadow, castShadow } = options;
   return new Promise((resolve, reject) => {
-    const loader = new GLTFLoader();
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderConfig({ type: "js" });
+    dracoLoader.setDecoderConfig({ type: "js" }); // (Optional) Override detection of WASM support.
     dracoLoader.setDecoderPath(
       "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
     );
+    const loader = new GLTFLoader();
     loader.setDRACOLoader(dracoLoader);
     loader.load(
       glbPath,
