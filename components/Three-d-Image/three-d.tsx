@@ -50,15 +50,16 @@ export default function VoxelComputer() {
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
 
-      const target = new THREE.Vector3(0, -0.1, 0.3);
+      //  const target = new THREE.Vector3(0, -0.1, 0.3);
+      const target = new THREE.Vector3(0, 2, 0);
       const initialCameraPosition = new THREE.Vector3(
-        20 * Math.sin(0.5 * Math.PI),
+        200 * Math.sin(0.5 * Math.PI),
         10,
-        20 * Math.cos(0.5 * Math.PI)
+        200 * Math.cos(0.5 * Math.PI)
       );
 
       // if scH is equal or greater than 640, scale up. If not scale down.
-      const scale = scH >= 640 ? scH * 0.0013 : scH * 0.0019;
+      const scale = scH >= 640 ? scH * 0.01 : scH * 0.012;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -78,7 +79,7 @@ export default function VoxelComputer() {
       controls.autoRotate = true;
       controls.target = target;
 
-      loadGLTFModel(scene, "/computer.glb", {
+      loadGLTFModel(scene, "/forest_house.glb", {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
