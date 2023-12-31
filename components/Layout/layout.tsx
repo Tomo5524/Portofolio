@@ -37,7 +37,7 @@ export default function Layout({
   return (
     <>
       <Head>
-        <title>Tomo's Portfolio</title>
+        <title>Tomo&apos;s Portfolio</title>
         <meta name="description" content={description} />
         <meta property="og:site_name" content={sitename} />
         <meta property="og:description" content={description} />
