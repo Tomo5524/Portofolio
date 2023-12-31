@@ -23,17 +23,16 @@ const Three_D_Component = dynamic(
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <Head>
-        <title>Tomo Portfolio</title>
-        {/* <meta name="description" content="Tomo Takebuchi Portfolio" /> */}
-        {/* <link rel="icon" href="/kitty.ico" /> */}
-        {/* preload background image in project page to avoid flickering issue */}
-        {/* <link
+      {/* <Head>
+        <meta name="description" content="Tomo Takebuchi Portfolio" />
+        <link rel="icon" href="/kitty.ico" />
+        preload background image in project page to avoid flickering issue
+        <link
           rel="preload"
           href="/images/modern-futuristic-sci-fi-background.webp"
           as="image"
-        ></link> */}
-      </Head>
+        ></link>
+      </Head> */}
       <main>
         <Suspense fallback={<LightSaberLoader />}>
           <Three_D_Component />
