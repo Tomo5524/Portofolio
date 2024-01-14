@@ -33,7 +33,7 @@ export default function Layout({
   }, []);
 
   // Because we cannot know the theme on the server, many of the values returned from useTheme will be undefined until mounted on the client.so first render should be null
-  if (!mounted) return null;
+  // if (!mounted) return null;
   return (
     <>
       <Head>
@@ -78,14 +78,13 @@ export default function Layout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       {/* asPath: String - The path as shown in the browser including the search params and respecting the trailingSlash configuration. basePath and locale are not included. */}
-      <LoadingContextProvider>
-        <Header path={router.asPath} />
-        <Container>
-          {/* <Three_D_Component /> */}
-          {children}
-        </Container>
-        {/* <Footer /> */}
-      </LoadingContextProvider>
+      {mounted && (
+        <LoadingContextProvider>
+          <Header path={router.asPath} />
+          <Container>{children}</Container>
+          {/* <Footer /> */}
+        </LoadingContextProvider>
+      )}
     </>
   );
 }
